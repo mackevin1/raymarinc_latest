@@ -5,7 +5,6 @@ from .views import home, board_topics
 from .models import Board
 
 class HomeTests(TestCase):
-    class HomeTests(TestCase):
     def setUp(self):
         self.board = Board.objects.create(name='Django', description='Django board.')
         url = reverse('home')
