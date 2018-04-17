@@ -7,7 +7,7 @@ from .models import Board
 class HomeTests(TestCase):
     # ...
 
-class BoardTopicsTests(TestCase):
+    class BoardTopicsTests(TestCase):
     def setUp(self):
         Board.objects.create(name='Django', description='Django board.')
 
