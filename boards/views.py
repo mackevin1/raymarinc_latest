@@ -3,6 +3,8 @@ from django.shortcuts import render
 from .models import Board
 from .forms import NewTopicForm
 from django.shortcuts import get_object_or_404
+from .models import Board, Topic, Post
+
 
 def home(request):
     boards = Board.objects.all()
