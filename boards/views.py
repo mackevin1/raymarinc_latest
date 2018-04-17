@@ -13,7 +13,7 @@ def new_topic(request, pk):
     return render(request, 'new_topic.html', {'board': board})
 def new_topic(request, pk):
     board = get_object_or_404(Board, pk=pk)
-    user = User.objects.first()  # TODO: get the currently logged in user
+    #user = User.objects.first()  # TODO: get the currently logged in user
     if request.method == 'POST':
         form = NewTopicForm(request.POST)
         if form.is_valid():
