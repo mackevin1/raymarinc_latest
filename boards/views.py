@@ -3,6 +3,8 @@ from .models import Board, Post, Topic
 from .forms import NewTopicForm
 from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
+
 
 def home(request):
     boards = Board.objects.all()
