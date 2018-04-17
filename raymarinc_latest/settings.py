@@ -25,7 +25,7 @@ SECRET_KEY = '87er=c4*ykv*yk91@d(dk#2#_pubq16xj#=$rbozzeok*7p@sq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dev.aglans.com']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'boards',
 ]
 
 MIDDLEWARE = [
