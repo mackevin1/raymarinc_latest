@@ -1,9 +1,7 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render
-from .models import Board
+from .models import Board, Post
 from .forms import NewTopicForm
 from django.shortcuts import render, redirect,get_object_or_404
-from .models import Post
 from django.contrib.auth.decorators import login_required
 
 def home(request):
