@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Board
 from .forms import NewTopicForm
 from django.shortcuts import render, redirect,get_object_or_404
-from .models import  Topic, Post
+from .models import Post
 from django.contrib.auth.decorators import login_required
 
 def home(request):
