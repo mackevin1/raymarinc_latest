@@ -124,4 +124,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-TEMPLATE_DIRS = ( os.path.join(SITE_ROOT, 'templates') )
+PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
