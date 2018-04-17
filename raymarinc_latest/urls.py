@@ -21,5 +21,5 @@ from boards import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.home, name='home'),
+    url('', views.home, name='home'),
 ]
