@@ -2,6 +2,31 @@ from django.db import models
 from django.conf import settings
 from taggit.managers import TaggableManager
 
+class Project(models.Model):
+    name = models.CharField(max_length=250)
+    slug = models.SlugField()
+    role = models.ForeignKey(Role, on_delete=models.CASCADE,)
+    project_url = models.URLField('Project URL')
+    type = models.ManyToManyField(ProjectType, blank=True)
+    description = models.TextField(blank=True)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE,)
+    completion_date = models.DateField()
+    in_development = models.BooleanField()
+    is_public = models.BooleanField(default=True)
+    images = models.ManyToManyField(ProjectImage)
+    is_featured = models.BooleanField()
+
+    class Meta:
+        db_table = 'projects'
+        ordering = ('-completion_date',)
+
+    def __unicode__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return "/work/%s/" % self.slug
+
+
 class ProjectType(models.Model):
     title = models.CharField(('title'), max_length=100)
     slug = models.SlugField(('slug'), unique=True)
@@ -57,27 +82,3 @@ class Role(models.Model):
 
     def __unicode__(self):
         return self.role
-
-class Project(models.Model):
-    name = models.CharField(max_length=250)
-    slug = models.SlugField()
-    role = models.ForeignKey(Role, on_delete=models.CASCADE,)
-    project_url = models.URLField('Project URL')
-    type = models.ManyToManyField(ProjectType, blank=True)
-    description = models.TextField(blank=True)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE,)
-    completion_date = models.DateField()
-    in_development = models.BooleanField()
-    is_public = models.BooleanField(default=True)
-    images = models.ManyToManyField(ProjectImage)
-    is_featured = models.BooleanField()
-
-    class Meta:
-        db_table = 'projects'
-        ordering = ('-completion_date',)
-
-    def __unicode__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return "/work/%s/" % self.slug
