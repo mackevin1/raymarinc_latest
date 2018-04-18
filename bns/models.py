@@ -25,7 +25,15 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return "/work/%s/" % self.slug
+class Role(models.Model):
+    role = models.CharField(max_length=50)
 
+    class Meta:
+        db_table = 'roles'
+        ordering = ('role',)
+
+    def __unicode__(self):
+        return self.role
 
 class ProjectType(models.Model):
     title = models.CharField(('title'), max_length=100)
@@ -72,13 +80,3 @@ class ProjectImage(models.Model):
 
     def get_absolute_url(self):
         return self.slug
-
-class Role(models.Model):
-    role = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'roles'
-        ordering = ('role',)
-
-    def __unicode__(self):
-        return self.role
