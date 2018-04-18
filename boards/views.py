@@ -8,6 +8,7 @@ from django.views.generic import UpdateView
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.decorators import method_decorator
+from django.views.generic import ListView
 
 
 def home(request):
