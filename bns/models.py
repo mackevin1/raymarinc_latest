@@ -65,11 +65,11 @@ class Project(models.Model):
     project_url = models.URLField('Project URL')
     type = models.ManyToManyField(ProjectType, blank=True)
     description = models.TextField(blank=True)
-    client = models.ForeignKey(Client)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE,)
     completion_date = models.DateField()
     in_development = models.BooleanField()
     is_public = models.BooleanField(default=True)
-    images = models.ManyToManyField(ProjectImage)
+    images = models.ManyToManyField(ProjectImage, on_delete=models.CASCADE,)
     is_featured = models.BooleanField()
 
     class Meta:
