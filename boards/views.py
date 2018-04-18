@@ -10,6 +10,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView
 from django.views.generic import CreateView
+from django.views.generic import View
 
 
 def home(request):
@@ -147,8 +148,14 @@ class PostListView(ListView):
         queryset = self.topic.posts.order_by('created_at')
         return queryset
 
-    class NewPostView(CreateView):
-        model = Post
-        form_class = PostForm
-        success_url = reverse_lazy('post_list')
-        template_name = 'new_post.html'
+class NewPostView(View):
+    def post(self, request):
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('post_list')
+        return render(request, 'new_post.html', {'form': form})
+
+    def get(self, request):
+        form = PostForm()
+        return render(request, 'new_post.html', {'form': form})
