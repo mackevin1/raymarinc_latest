@@ -63,7 +63,7 @@ class ProjectImage(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField()
-    role = models.ForeignKey(Role)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE,)
     project_url = models.URLField('Project URL')
     type = models.ManyToManyField(ProjectType, blank=True)
     description = models.TextField(blank=True)
@@ -71,7 +71,7 @@ class Project(models.Model):
     completion_date = models.DateField()
     in_development = models.BooleanField()
     is_public = models.BooleanField(default=True)
-    images = models.ManyToManyField(ProjectImage)
+    images = models.ManyToManyField(ProjectImage, on_delete=models.CASCADE,)
     is_featured = models.BooleanField()
 
     class Meta:
