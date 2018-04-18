@@ -72,19 +72,6 @@ def reply_topic(request, pk, topic_pk):
         form = PostForm()
     return render(request, 'reply_topic.html', {'topic': topic, 'form': form})
 
-class PostUpdateView(UpdateView):
-    model = Post
-    fields = ('message', )
-    template_name = 'edit_post.html'
-    pk_url_kwarg = 'post_pk'
-    context_object_name = 'post'
-
-    def form_valid(self, form):
-        post = form.save(commit=False)
-        post.updated_by = self.request.user
-        post.updated_at = timezone.now()
-        post.save()
-        return redirect('topic_posts', pk=post.topic.board.pk, topic_pk=post.topic.pk)
 
 @method_decorator(login_required, name='dispatch')
 class PostUpdateView(UpdateView):
