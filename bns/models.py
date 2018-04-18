@@ -18,7 +18,7 @@ class Bns(models.Model):
 class Productbns(models.Model):
     subject = models.CharField(max_length=255)
     last_updated = models.DateTimeField(auto_now_add=True)
-    bns = models.ForeignKey(Bns, related_name='Productbns', on_delete=models.CASCADE,)
+    bns = models.ForeignKey(Bns, related_name='Bns', on_delete=models.CASCADE,)
     #starter = models.ForeignKey(User, related_name='topics', on_delete=models.CASCADE,)
     #views = models.PositiveIntegerField(default=0)  # <- here
 
