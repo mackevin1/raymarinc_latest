@@ -54,11 +54,22 @@ def reply_topic(request, pk, topic_pk):
             post.topic = topic
             post.created_by = request.user
             post.save()
-            return redirect('topic_posts', pk=pk, topic_pk=topic_pk)
+
+            topic.last_updated = timezone.now()
+            topic.save()
+
+            topic_url = reverse('topic_posts', kwargs={'pk': pk, 'topic_pk': topic_pk})
+            topic_post_url = '{url}?page={page}#{id}'.format(
+                url=topic_url,
+                id=post.pk,
+                page=topic.get_page_count()
+            )
+
+            return redirect(topic_post_url)
     else:
         form = PostForm()
     return render(request, 'reply_topic.html', {'topic': topic, 'form': form})
-
+    
 class PostUpdateView(UpdateView):
     model = Post
     fields = ('message', )
@@ -90,6 +101,8 @@ class PostUpdateView(UpdateView):
         post.updated_by = self.request.user
         post.updated_at = timezone.now()
         post.save()
+        topic.last_updated = timezone.now()  # <- here
+        topic.save()
         return redirect('topic_posts', pk=post.topic.board.pk, topic_pk=post.topic.pk)
 
 def board_topics(request, pk):
