@@ -9,6 +9,7 @@ from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView
+from django.views.generic import CreateView
 
 
 def home(request):
@@ -69,7 +70,7 @@ def reply_topic(request, pk, topic_pk):
     else:
         form = PostForm()
     return render(request, 'reply_topic.html', {'topic': topic, 'form': form})
-    
+
 class PostUpdateView(UpdateView):
     model = Post
     fields = ('message', )
@@ -145,3 +146,9 @@ class PostListView(ListView):
         self.topic = get_object_or_404(Topic, board__pk=self.kwargs.get('pk'), pk=self.kwargs.get('topic_pk'))
         queryset = self.topic.posts.order_by('created_at')
         return queryset
+
+    class NewPostView(CreateView):
+        model = Post
+        form_class = PostForm
+        success_url = reverse_lazy('post_list')
+        template_name = 'new_post.html'
