@@ -5,9 +5,9 @@ from taggit.managers import TaggableManager
 class Project(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField()
-    #role = models.ForeignKey(Role)
+    role = models.ForeignKey(Role, related_name='projects')
     project_url = models.URLField('Project URL')
-    type = models.ManyToManyField(ProjectType, blank=True)
+    type = models.ManyToManyField(ProjectType, related_name='projects', blank=True)
     description = models.TextField(blank=True)
     client = models.ForeignKey(Client, on_delete=models.CASCADE,)
     completion_date = models.DateField()
