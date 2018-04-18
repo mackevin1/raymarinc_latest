@@ -4,29 +4,6 @@ from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 from django.utils.text import Truncator
 
-class Project(models.Model):
-    name = models.CharField(max_length=250)
-    slug = models.SlugField()
-    #role = models.ForeignKey(Role)
-    project_url = models.URLField('Project URL')
-    #type = models.ManyToManyField(ProjectType, blank=True)
-    description = models.TextField(blank=True)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE,)
-    completion_date = models.DateField()
-    in_development = models.BooleanField()
-    is_public = models.BooleanField(default=True)
-    images = models.ManyToManyField(ProjectImage)
-    is_featured = models.BooleanField()
-
-    class Meta:
-        db_table = 'projects'
-        ordering = ('-completion_date',)
-
-    def __unicode__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return "/work/%s/" % self.slug
 class Role(models.Model):
     role = models.CharField(max_length=50)
 
@@ -66,7 +43,7 @@ class ProjectImage(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
     image_path = models.CharField(max_length=100, blank=True)
-    image = models.FileField(upload_to="images/portfolio", blank=True)
+    image = models.FileField(upload_to="img/portfolio", blank=True)
     credit = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
     tags = TaggableManager()
@@ -82,3 +59,27 @@ class ProjectImage(models.Model):
 
     def get_absolute_url(self):
         return self.slug
+
+class Project(models.Model):
+    name = models.CharField(max_length=250)
+    slug = models.SlugField()
+    role = models.ForeignKey(Role)
+    project_url = models.URLField('Project URL')
+    type = models.ManyToManyField(ProjectType, blank=True)
+    description = models.TextField(blank=True)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE,)
+    completion_date = models.DateField()
+    in_development = models.BooleanField()
+    is_public = models.BooleanField(default=True)
+    images = models.ManyToManyField(ProjectImage)
+    is_featured = models.BooleanField()
+
+    class Meta:
+        db_table = 'projects'
+        ordering = ('-completion_date',)
+
+    def __unicode__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return "/work/%s/" % self.slug
