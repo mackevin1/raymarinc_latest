@@ -18,7 +18,7 @@ class BnsListView(ListView):
 
 
 class Product_optionListView(ListView):
-    model = product_option
+    model = Product_option
     context_object_name = 'product_option'
     template_name = 'product_option.html'
     paginate_by = 20
