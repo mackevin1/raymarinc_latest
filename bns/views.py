@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse
 
 #from .forms import NewTopicForm, PostForm
-from .models import Bns, Product_option
+from .models import Bns, Productsbns
 
 
 class BnsListView(ListView):
@@ -17,10 +17,10 @@ class BnsListView(ListView):
     template_name = 'bns.html'
 
 
-class Product_optionListView(ListView):
-    model = Product_option
-    context_object_name = 'product_option'
-    template_name = 'product_option.html'
+class ProductsbnsListView(ListView):
+    model = Productsbns
+    context_object_name = 'productbns'
+    template_name = 'productsbns.html'
     paginate_by = 20
 
     def get_context_data(self, **kwargs):
@@ -29,7 +29,7 @@ class Product_optionListView(ListView):
 
     def get_queryset(self):
         self.board = get_object_or_404(Board, pk=self.kwargs.get('pk'))
-        queryset = self.board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
+        queryset = self.bns.productsbns.order_by('-last_updated').annotate(replies=Count('posts') - 1)
         return queryset
 
 
@@ -37,7 +37,7 @@ class Product_optionListView(ListView):
 
 @login_required
 def reply_topic(request, pk, topic_pk):
-    topic = get_object_or_404(Topic, board__pk=pk, pk=topic_pk)
+    topic = get_object_or_404(Topic, bns__pk=pk, pk=productbns_pk)
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
@@ -49,11 +49,11 @@ def reply_topic(request, pk, topic_pk):
             topic.last_updated = timezone.now()
             topic.save()
 
-            topic_url = reverse('topic_posts', kwargs={'pk': pk, 'topic_pk': topic_pk})
+            topic_url = reverse('productbns_posts', kwargs={'pk': pk, 'productbns_pk': productbns_pk})
             topic_post_url = '{url}?page={page}#{id}'.format(
                 url=topic_url,
-                id=post.pk,
-                page=topic.get_page_count()
+                id=bns.pk,
+                page=productbns.get_page_count()
             )
 
             return redirect(topic_post_url)
