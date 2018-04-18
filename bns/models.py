@@ -1,13 +1,15 @@
 from django.db import models
 from django.conf import settings
 from taggit.managers import TaggableManager
+from django.contrib.auth.models import User
+from django.utils.text import Truncator
 
 class Project(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField()
-    role = models.ForeignKey(Role, related_name='projects')
+    #role = models.ForeignKey(Role)
     project_url = models.URLField('Project URL')
-    type = models.ManyToManyField(ProjectType, related_name='projects', blank=True)
+    #type = models.ManyToManyField(ProjectType, blank=True)
     description = models.TextField(blank=True)
     client = models.ForeignKey(Client, on_delete=models.CASCADE,)
     completion_date = models.DateField()
