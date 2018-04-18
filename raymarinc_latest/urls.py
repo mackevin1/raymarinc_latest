@@ -5,8 +5,11 @@ from django.contrib.auth import views as auth_views
 from accounts import views as accounts_views
 from boards import views
 from bns import views as bns_views
+from bns.models import Project
 
-
+info_dict = {
+    'queryset': Project.objects.all(),
+}
 urlpatterns = [
     url(r'^$', views.BoardListView.as_view(), name='home'),
     url(r'^signup/$', accounts_views.signup, name='signup'),
@@ -43,5 +46,5 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
-    url(r'^bns/(?P<pk>\d+)/$', views.Product_optionListView.as_view(), name='product_option'),
-]
+    (r'^$', 'django.views.generic.list_detail.object_list', info_dict),
+    (r'^(?P<slug>[\w-]+)/$', 'django.views.generic.list_detail.object_detail', info_dict),]

@@ -1,59 +1,83 @@
-import math
 from django.db import models
-from django.contrib.auth.models import User
-from django.utils.text import Truncator
+from django.conf import settings
+from taggit.managers import TaggableManager
+
+class ProjectType(models.Model):
+    title = models.CharField(('title'), max_length=100)
+    slug = models.SlugField(('slug'), unique=True)
+
+    class Meta:
+        verbose_name = ('type')
+        verbose_name_plural = ('types')
+        db_table = 'project_types'
+        ordering = ('title',)
+
+    def __unicode__(self):
+        return u'%s' % self.title
 
 
-class Bns(models.Model):
-    name = models.CharField(max_length=30, unique=True)
-    description = models.CharField(max_length=100)
-    def __str__(self):
+class Client(models.Model):
+    name = models.CharField(max_length=250)
+    url = models.URLField(blank=True)
+
+    class Meta:
+        db_table = 'clients'
+        ordering = ('name',)
+
+    def __unicode__(self):
         return self.name
-    def get_posts_count(self):
-        return Post.objects.filter(productbns__bns=self).count()
 
-    def get_last_post(self):
-        return Post.objects.filter(topic__board=self).order_by('-created_at').first()
+class ProjectImage(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField()
+    image_path = models.CharField(max_length=100, blank=True)
+    image = models.FileField(upload_to="images/portfolio", blank=True)
+    credit = models.CharField(max_length=100, blank=True)
+    description = models.TextField(blank=True)
+    tags = TaggableManager()
+    is_featured = models.BooleanField('Is this image featured on your main pages?')
+    uploaded = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
 
-class Productbns(models.Model):
-    subject = models.CharField(max_length=255)
-    last_updated = models.DateTimeField(auto_now_add=True)
-    bns = models.ForeignKey(Bns, related_name='Bns', on_delete=models.CASCADE,)
-    #starter = models.ForeignKey(User, related_name='topics', on_delete=models.CASCADE,)
-    #views = models.PositiveIntegerField(default=0)  # <- here
+    class Meta:
+        db_table = 'project_images'
 
-    def __str__(self):
-        return self.subject
+    def __unicode__(self):
+        return '%s' % self.title
 
-    def get_page_count(self):
-        count = self.posts.count()
-        pages = count / 20
-        return math.ceil(pages)
+    def get_absolute_url(self):
+        return self.slug
 
-    def has_many_pages(self, count=None):
-        if count is None:
-            count = self.get_page_count()
-        return count > 6
+class Role(models.Model):
+    role = models.CharField(max_length=50)
 
-    def get_page_range(self):
-        count = self.get_page_count()
-        if self.has_many_pages(count):
-            return range(1, 5)
-        return range(1, count + 1)
+    class Meta:
+        db_table = 'roles'
+        ordering = ('role',)
 
-    def get_last_ten_posts(self):
-        return self.posts.order_by('-created_at')[:10]
+    def __unicode__(self):
+        return self.role
 
-#class Post(models.Model):
-#    message = models.TextField(max_length=4000)
-#    topic = models.ForeignKey(Topic, related_name='posts', on_delete=models.CASCADE,)
-#    created_at = models.DateTimeField(auto_now_add=True)
-#    updated_at = models.DateTimeField(null=True)
-#    created_by = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE,)
-#    updated_by = models.ForeignKey(User, null=True, related_name='+', on_delete=models.CASCADE,)
-#    def __str__(self):
-#        truncated_message = Truncator(self.message)
-#        return truncated_message.chars(30)
+class Project(models.Model):
+    name = models.CharField(max_length=250)
+    slug = models.SlugField()
+    role = models.ForeignKey(Role)
+    project_url = models.URLField('Project URL')
+    type = models.ManyToManyField(ProjectType, blank=True)
+    description = models.TextField(blank=True)
+    client = models.ForeignKey(Client)
+    completion_date = models.DateField()
+    in_development = models.BooleanField()
+    is_public = models.BooleanField(default=True)
+    images = models.ManyToManyField(ProjectImage)
+    is_featured = models.BooleanField()
 
-#def get_message_as_markdown(self):
-#        return mark_safe(markdown(self.message, safe_mode='escape'))
+    class Meta:
+        db_table = 'projects'
+        ordering = ('-completion_date',)
+
+    def __unicode__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return "/work/%s/" % self.slug
