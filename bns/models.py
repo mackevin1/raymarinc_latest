@@ -71,7 +71,7 @@ class Project(models.Model):
     completion_date = models.DateField()
     in_development = models.BooleanField()
     is_public = models.BooleanField(default=True)
-    images = models.ManyToManyField(ProjectImage, on_delete=models.CASCADE,)
+    images = models.ManyToManyField(ProjectImage)
     is_featured = models.BooleanField()
 
     class Meta:
