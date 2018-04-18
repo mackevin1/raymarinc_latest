@@ -12,13 +12,13 @@ from .models import Bns, Product_option
 
 
 class BnsListView(ListView):
-    model = Board
+    model = Bns
     context_object_name = 'bns'
     template_name = 'bns.html'
 
 
 class Product_optionListView(ListView):
-    model = Topic
+    model = product_option
     context_object_name = 'product_option'
     template_name = 'product_option.html'
     paginate_by = 20
