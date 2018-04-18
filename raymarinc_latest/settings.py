@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'boards',
     'bns',
+    'taggit',
 ]
 
 MIDDLEWARE = [
