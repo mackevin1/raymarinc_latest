@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',  # <- here
+    'django.contrib.sitemaps',
     'widget_tweaks',
     'taggit',
     'accounts',
