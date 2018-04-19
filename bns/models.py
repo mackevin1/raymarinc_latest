@@ -40,7 +40,7 @@ class ProjectImage(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table = 'project_images'
+        db_table = 'project_images_new'
 
     def __unicode__(self):
         return '%s' % self.title
