@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+#from django.conf.urls.defaults import *
 from bns.models import Project
 
 info_dict = {
