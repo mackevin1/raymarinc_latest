@@ -47,7 +47,7 @@
 <section id="main">
     <div class="wrapper">
     {% block main %}
-    {% for project in project_list %}
+    {% get_projects as project_list %}
         <article>
             <section>
                 <h1><a href="{{ object.get_absolute_url }}">{{ object }}</a></h1>
@@ -60,7 +60,6 @@
             Other projects: {% for project in project_list %}{% if project.id != object.id %}<a href="{{ project.get_absolute_url }}">{{ project }}</a>{% endif %}{% endfor %}
             </nav>
         </article>
-        {% endfor %}
     {% endblock %}
     </div>
 </section>
