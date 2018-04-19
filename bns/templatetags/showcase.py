@@ -1,7 +1,7 @@
 import re
 
 from django import template
-from django.db.models import get_model
+#from django.db.models import get_model
 
 Project = get_model('showcase', 'Project')
 
