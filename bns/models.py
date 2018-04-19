@@ -72,9 +72,9 @@ class Project(models.Model):
     images = models.ManyToManyField(ProjectImage)
     is_featured = models.BooleanField()
 
-    class Meta:
-        db_table = 'project'
-        ordering = ('-completion_date',)
+    #class Meta:
+    #    db_table = 'project'
+    #    ordering = ('-completion_date',)
 
     def __unicode__(self):
         return self.name
