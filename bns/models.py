@@ -39,7 +39,7 @@ class ProjectImage(models.Model):
     uploaded = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-    class Meta:
+    class Meta(models.Model):
         db_table = 'project_images'
 
     def __unicode__(self):
