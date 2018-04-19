@@ -47,5 +47,5 @@ urlpatterns = [
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
 
-    url(r'^bns/(?P<pk>\d+)/$', views.ProductListView.as_view(), name='product_list'),
-]
+    url(r'^bns/(?P<pk>\d+)/$', views.ProductListView.as_view(), name='product'),
+]    
