@@ -3,7 +3,7 @@ import re
 from django import template
 from django.apps import apps
 
- apps.get_model('bns', 'Project')
+apps.get_model('bns', 'Project')
 
 register = template.Library()
 
