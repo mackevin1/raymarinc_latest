@@ -13,7 +13,7 @@ from .models import Project
 class ProjectListView(ListView):
     model = Project
     context_object_name = 'Project'
-    template_name = 'home.html'
+    template_name = 'base.html'
 
 def get_queryset(self):
     self.project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
