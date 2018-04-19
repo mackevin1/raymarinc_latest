@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.comments',
     'django.contrib.humanize',  # <- here
     'django.contrib.sitemaps',
     'widget_tweaks',
