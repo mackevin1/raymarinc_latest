@@ -15,6 +15,6 @@ info_dict = {
 urlpatterns = [
     url(r'^bns/$', views.ProjectListView.as_view(), info_dict),
     url(r'^bns(?P<slug>[\w-]+)/$', views.ProjectListView.as_view(), info_dict),
-    url(r'^bns/$', views.bns_viewsListView.as_view(), name='product'),
+    url(r'^bns/$', views.ProjectListView.as_view(), name='product'),
 
 ]
