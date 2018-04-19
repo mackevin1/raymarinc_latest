@@ -46,5 +46,5 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
-
+    url(r'^bns/',views.ProjectListView.as_view(),name='project'),
 ]
