@@ -120,3 +120,13 @@ class PostUpdateView(UpdateView):
         post.updated_at = timezone.now()
         post.save()
         return redirect('topic_posts', pk=post.topic.board.pk, topic_pk=post.topic.pk)
+
+class ProjectListView(ListView):
+    model = Project
+    context_object_name = 'Project'
+    template_name = 'project.html'
+
+def get_queryset(self):
+    self.project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
+    queryset = self.project.order_by('-last_updated')
+    return queryset
