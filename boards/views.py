@@ -9,7 +9,7 @@ from django.urls import reverse
 
 from .forms import NewTopicForm, PostForm
 from .models import Board, Post, Topic
-
+from bns.models import Project
 
 class BoardListView(ListView):
     model = Board
