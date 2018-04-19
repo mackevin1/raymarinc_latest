@@ -18,4 +18,4 @@ class ProjectListView(ListView):
 def get_queryset(self):
     self.project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
     queryset = self.project.order_by('-last_updated')
-    return queryset
+    return render(request, 'product_list.html', {'project': project})
