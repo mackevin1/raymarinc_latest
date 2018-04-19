@@ -9,6 +9,6 @@ info_dict = {
 }
 
 urlpatterns = [
-    url(r'^$', ' django.views.generic.list.ListView', info_dict),
-    url(r'^(?P<slug>[\w-]+)/$', ' django.views.generic.list.ListView', info_dict),
+    url(r'^$', django.views.generic.list.ListView, info_dict),
+    url(r'^(?P<slug>[\w-]+)/$', django.views.generic.list.ListView, info_dict),
 ]
