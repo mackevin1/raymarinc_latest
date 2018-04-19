@@ -1,15 +1,12 @@
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from bns.models import Project
 
 from accounts import views as accounts_views
 from boards import views
-from bns import views as bns_views
-#from bns.models import Project
 
-#info_dict = {
-#    'queryset': Project.objects.all(),
-#}
+
 urlpatterns = [
     url(r'^$', views.BoardListView.as_view(), name='home'),
     url(r'^signup/$', accounts_views.signup, name='signup'),
@@ -47,3 +44,10 @@ urlpatterns = [
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
 ]
+urlpatterns = patterns('',
+    (r'^$', 'django.views.generic.list_detail.object_list', info_dict),
+    (r'^(?P<slug>[\w-]+)/$', 'django.views.generic.list_detail.object_detail', info_dict),
+)
+info_dict = {
+    'queryset': Project.objects.all(),
+}

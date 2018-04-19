@@ -72,6 +72,8 @@ class Project(models.Model):
     images = models.ManyToManyField(ProjectImage)
     is_featured = models.BooleanField()
 
+    def __str__(self):
+        return self.name
     #class Meta:
     #    db_table = 'project'
     #    ordering = ('-completion_date',)
