@@ -48,7 +48,7 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
-    url(r'^bns/(?P<pk>\d+)/$', views.ProjectListView.as_view(), info_dict),
+    url(r'^bns/(?P<pk>\d+)/projects/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(), info_dict),
     url(r'^bns(?P<slug>[\w-]+)/$', views.ProjectListView.as_view(), info_dict),
     #url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
 ]
