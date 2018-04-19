@@ -12,6 +12,11 @@
   </head>
   <body>
     {% block body %}  <!-- HERE -->
+    <section id="main">
+        <div class="wrapper">
+        {% block main %}{% endblock %}
+        </div>
+    </section>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}">Django Boards</a>
@@ -64,7 +69,6 @@
         var simplemde = new SimpleMDE();
       </script>
     {% endblock %}  <!-- Add this empty block here! -->
-    {% block main %}{% endblock %}
 
   </body>
 </html>
