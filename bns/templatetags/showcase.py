@@ -1,9 +1,9 @@
 import re
 
 from django import template
-#from django.db.models import get_model
+from django.apps import apps
 
-Project = get_model('showcase', 'Project')
+ apps.get_model('bns', 'Project')
 
 register = template.Library()
 
