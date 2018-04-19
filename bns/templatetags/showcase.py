@@ -35,6 +35,6 @@ def get_project(parser, token):
         raise template.TemplateSyntaxError("%s tag requires arguments" % token.contents.split()[0])
     m = re.search(r'(.*?) and (.*?) as (\w+)', arg)
     if not m:
-        raise template.TemplateSyntaxError, "%s tag had invalid arguments" % tag_name
-    var_name = m.groups()[0]
+        raise template.TemplateSyntaxError("%s tag had invalid arguments" % tag_name)
+    var_name = m.groups()
     return Project(var_name)
