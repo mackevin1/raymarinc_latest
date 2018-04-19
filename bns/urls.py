@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from .models import Project
+from bns.models import Project
 
 info_dict = {
     'queryset': Project.objects.all(),
