@@ -41,7 +41,7 @@ class ProjectImage(models.Model):
 
     class Meta(models.Model):
         db_table = 'project_images'
-
+        ordering = ('title',)
     def __unicode__(self):
         return '%s' % self.title
 
