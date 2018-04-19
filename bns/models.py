@@ -76,7 +76,7 @@ class Project(models.Model):
 
     class Meta:
         db_table = 'project'
-       ordering = ('-completion_date',)
+        ordering = ('-completion_date',)
 
     def __unicode__(self):
         return self.name
