@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="description" content="{% block meta_desc %}{% endblock %}" />
 <title>Django-Showcase Example {% block title %}{% endblock %}</title>
-<link rel="stylesheet" href="{{ STATIC_URL }}css/screen.css">
+<link rel="stylesheet" href="{% static 'css/screen.css' %}">
 </head>
 
 <body class ="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
