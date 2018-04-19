@@ -9,6 +9,7 @@
 {% block main %}
 {% load showcase %}
 {% get_projects as project_list %}
+{% for project in project_list %}
     <article>
         <section>
             <h1><a href="{{ object.get_absolute_url }}">{{ object }}</a></h1>
