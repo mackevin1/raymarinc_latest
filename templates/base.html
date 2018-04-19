@@ -44,7 +44,7 @@
   </div>
 </nav>
 {% load showcase %}
-{% get_projects as project_list %}
+{% for projects as project_list %}
     <article>
         <section>
             <h1><a href="{{ object.get_absolute_url }}">{{ object }}</a></h1>
