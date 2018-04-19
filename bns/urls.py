@@ -1,4 +1,4 @@
-#from django.conf.urls.defaults import *
+from django.views.generic.list import ListView, DetailView
 from bns.models import Project
 from django.conf.urls import url
 from django.contrib import admin
@@ -9,6 +9,6 @@ info_dict = {
 }
 
 urlpatterns = [
-    url(r'^$', django.views.generic.list.ListView, info_dict),
+    url(r'^bns/$', django.views.generic.list.ListView, info_dict),
     url(r'^(?P<slug>[\w-]+)/$', django.views.generic.list.ListView, info_dict),
 ]
