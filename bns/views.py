@@ -11,6 +11,6 @@ from django.urls import reverse
 from .models import Project, ProjectType, Client, ProjectImage, Role
 
 class Products(ListView):
-    model = Board
+    model = Products
     context_object_name = 'products'
     template_name = 'base_bns.html'
