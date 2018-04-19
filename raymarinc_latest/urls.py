@@ -45,10 +45,10 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', 'django.views.generic.list_detail.object_list', info_dict),
-    url(r'^(?P<slug>[\w-]+)/$', 'django.views.generic.list_detail.object_detail', info_dict),
+    url(r'^$', 'django.views.generic.list_detail.object_list'),
+    url(r'^(?P<slug>[\w-]+)/$', 'django.views.generic.list_detail.object_detail'),
 ]
 
-info_dict = {
-    'queryset': Project.objects.all(),
-}
+#info_dict = {
+#    'queryset': Project.objects.all(),
+#}
