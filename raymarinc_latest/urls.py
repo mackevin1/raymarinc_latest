@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from bns.models import Project
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url, include
 from accounts import views as accounts_views
 from boards import views
 
