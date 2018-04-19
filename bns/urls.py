@@ -3,7 +3,7 @@ from bns.models import Project
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.conf.urls import patterns, url
+
 info_dict = {
     'queryset': Project.objects.all(),
 }
