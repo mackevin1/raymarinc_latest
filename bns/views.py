@@ -13,7 +13,8 @@ from .models import Project
 class ProjectListView(ListView):
     model = Project
     context_object_name = 'Project'
-    template_name = 'base_bns.html'
+    template_name = 'home.html'
+
 def get_queryset(self):
     self.board = get_object_or_404(Project, pk=self.kwargs.get('pk'))
     queryset = self.project.order_by('-last_updated')
