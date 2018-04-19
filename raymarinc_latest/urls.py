@@ -49,7 +49,7 @@ urlpatterns = [
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
 
-    url(r'^bns/$', bns_views.ProjectListView.as_view(), info_dict),
+    url(r'^bns/(?P<pk>\d+)/$', bns_views.ProjectListView.as_view(), info_dict),
     url(r'^bns(?P<slug>[\w-]+)/$', bns_views.ProjectListView.as_view(), info_dict),
     #url(r'^bns/$', views.bns_viewsListView.as_view(), name='bns'),
 
