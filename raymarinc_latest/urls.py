@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^bns/', include('bns.urls')),
+    url(r'^bns/$', views.bns_viewsListView.as_view(), name='product'),
     url(r'^reset/$',
         auth_views.PasswordResetView.as_view(
             template_name='password_reset.html',
@@ -49,7 +50,7 @@ urlpatterns = [
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
 
-    url(r'^bns/(?P<pk>\d+)/$', bns_views.ProjectListView.as_view(), name="base_bns.html"),
+    url(r'^bns/(?P<pk>\d+)/$', bns_views.ProjectListView.as_view(), name="project"),
     url(r'^bns(?P<slug>[\w-]+)/$', bns_views.ProjectListView.as_view(), info_dict),
     #url(r'^bns/$', views.bns_viewsListView.as_view(), name='bns'),
 
