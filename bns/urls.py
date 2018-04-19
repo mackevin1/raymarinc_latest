@@ -5,7 +5,7 @@ info_dict = {
     'queryset': Project.objects.all(),
 }
 
-urlpatterns = patterns('',
-    (r'^$', 'django.views.generic.list_detail.object_list', info_dict),
-    (r'^(?P<slug>[\w-]+)/$', 'django.views.generic.list_detail.object_detail', info_dict),
-)
+urlpatterns = [
+    url(r'^$', 'django.views.generic.list_detail.object_list', info_dict),
+    url(r'^(?P<slug>[\w-]+)/$', 'django.views.generic.list_detail.object_detail', info_dict),
+]
