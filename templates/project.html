@@ -3,7 +3,6 @@
 {% load static %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'css/screen.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -43,6 +42,14 @@
     {% block main %}{% endblock %}
     </div>
 </section>
-{% endblock %}
-</body>
-</html>
+{% endblock body %}
+{% load static %}
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block javascript %}
+    <script src="{% static 'js/simplemde.min.js' %}"></script>
+      <script>
+        var simplemde = new SimpleMDE();
+      </script>
+    {% endblock %}  <!-- Add this empty block here! -->
