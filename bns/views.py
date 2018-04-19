@@ -9,3 +9,8 @@ from django.urls import reverse
 
 #from .forms import NewTopicForm, PostForm
 from .models import Project, ProjectType, Client, ProjectImage, Role
+
+class Products(ListView):
+    model = Board
+    context_object_name = 'products'
+    template_name = 'base_bns.html'
