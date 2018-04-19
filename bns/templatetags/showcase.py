@@ -3,7 +3,7 @@ import re
 from django import template
 from django.db.models import get_model
 
-Project = get_model('bns', 'Project')
+Project = get_model('showcase', 'Project')
 
 register = template.Library()
 
