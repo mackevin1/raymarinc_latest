@@ -7,7 +7,7 @@ Project = get_model('showcase', 'Project')
 
 register = template.Library()
 
-class Projects(template.Node):
+class Project(template.Node):
     def __init__(self, var_name):
         self.var_name = var_name
 
@@ -38,4 +38,3 @@ def get_projects(parser, token):
         raise template.TemplateSyntaxError, "%s tag had invalid arguments" % tag_name
     var_name = m.groups()[0]
     return Projects(var_name)
-
