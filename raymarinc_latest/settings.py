@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'boards',
     'bns',
     'taggit',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
