@@ -16,6 +16,6 @@ class ProjectListView(ListView):
     template_name = 'home.html'
 
 def get_queryset(self):
-    self.board = get_object_or_404(Project, pk=self.kwargs.get('pk'))
+    self.project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
     queryset = self.project.order_by('-last_updated')
     return queryset
