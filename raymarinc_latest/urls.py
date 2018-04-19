@@ -47,5 +47,4 @@ urlpatterns = [
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
 
-    url(r'^bns/$', auth_views.ProjectView.as_view(template_name='base_bns.html'),
 ]
