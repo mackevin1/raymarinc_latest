@@ -13,4 +13,4 @@ from .models import Project
 class ProjectListView(ListView):
     model = Project
     context_object_name = 'Project'
-    template_name = 'home.html'
+    template_name = 'base_bns.html'
