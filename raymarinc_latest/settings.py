@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',  # <- here
     'widget_tweaks',
+    'taggit',
     'accounts',
     'boards',
-    'taggit',
-    'django.contrib.sites',
+    'bns',
 ]
 
 MIDDLEWARE = [
