@@ -7,7 +7,6 @@ from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.urls import reverse
 
-from .forms import NewTopicForm, PostForm
 from .models import Project
 
 
