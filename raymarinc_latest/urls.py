@@ -7,7 +7,7 @@ from django.contrib.sitemaps.views import sitemap
 
 from accounts import views as accounts_views
 from boards import views
-from bns import vies as bns_views
+from bns import views as bns_views
 
 
 urlpatterns = [
