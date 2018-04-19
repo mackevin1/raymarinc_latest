@@ -39,8 +39,8 @@ class ProjectImage(models.Model):
     uploaded = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-#    class Meta
-#        db_table = 'project_images'
+    class Meta
+        db_table = 'project_images'
 
     def __unicode__(self):
         return '%s' % self.title
@@ -69,7 +69,7 @@ class Project(models.Model):
     completion_date = models.DateField()
     in_development = models.BooleanField()
     is_public = models.BooleanField(default=True)
-    images = models.ManyToManyField(ProjectImages)
+    images = models.ManyToManyField(ProjectImage)
     is_featured = models.BooleanField()
 
     def __str__(self):
