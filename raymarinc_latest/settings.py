@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'accounts',
     'boards',
-    'bns',
     'taggit',
     'django.contrib.sites',
 ]
