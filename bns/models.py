@@ -74,9 +74,9 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
-    #class Meta:
-    #    db_table = 'project'
-    #    ordering = ('-completion_date',)
+    class Meta:
+        db_table = 'project'
+        ordering = ('-completion_date',)
 
     def __unicode__(self):
         return self.name
