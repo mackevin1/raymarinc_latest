@@ -43,6 +43,7 @@
     </div>
   </div>
 </nav>
+{% block projects %}
 {% load showcase %}
 {% get_projects as project_list %}
     <article>
@@ -67,6 +68,7 @@
         </section>
   {% endfor %}
     </article>
+    {% endblock %}
   <div class="container">
     <ol class="breadcrumb my-4">
       {% block breadcrumb %}
