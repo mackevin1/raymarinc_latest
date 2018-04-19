@@ -73,7 +73,7 @@ class Project(models.Model):
     is_featured = models.BooleanField()
 
     class Meta:
-        db_table = 'projects'
+        db_table = 'project'
         ordering = ('-completion_date',)
 
     def __unicode__(self):

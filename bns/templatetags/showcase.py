@@ -17,17 +17,17 @@ class Project(template.Node):
         return ''
 
 @register.tag
-def get_projects(parser, token):
+def get_project(parser, token):
     """
     Gets all the projects.
 
     Syntax::
 
-        {% get_projects as [var_name] %}
+        {% get_project as [var_name] %}
 
     Example usage::
 
-        {% get_projects as project_list %}
+        {% get_project as project_list %}
     """
     try:
         tag_name, arg = token.contents.split(None, 1)
@@ -37,4 +37,4 @@ def get_projects(parser, token):
     if not m:
         raise template.TemplateSyntaxError, "%s tag had invalid arguments" % tag_name
     var_name = m.groups()[0]
-    return Projects(var_name)
+    return Project(var_name)
