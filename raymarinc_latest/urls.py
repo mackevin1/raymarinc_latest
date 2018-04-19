@@ -5,9 +5,9 @@ from bns.models import Project
 from django.conf.urls import url, include
 from django.contrib.sitemaps.views import sitemap
 
+from bns import views as bns_views
 from accounts import views as accounts_views
 from boards import views
-from bns import views as bns_views
 
 
 urlpatterns = [
