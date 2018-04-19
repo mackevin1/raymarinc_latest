@@ -8,7 +8,9 @@ from django.contrib.sitemaps.views import sitemap
 from bns import views as bns_views
 from accounts import views as accounts_views
 from boards import views
-
+info_dict = {
+    'queryset': Project.objects.all(),
+}
 
 urlpatterns = [
     url(r'^$', views.BoardListView.as_view(), name='home'),
