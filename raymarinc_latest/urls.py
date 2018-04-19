@@ -11,11 +11,7 @@ from boards import views
 info_dict = {
     'queryset': Project.objects.all(),
 }
-urlpatterns = [
-url(r'^bns/$', views.ProjectListView.as_view(), info_dict),
-url(r'^bns(?P<slug>[\w-]+)/$', views.ProjectListView.as_view(), info_dict),
-url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
-]
+
 urlpatterns = [
     url(r'^$', views.BoardListView.as_view(), name='home'),
     url(r'^signup/$', accounts_views.signup, name='signup'),
@@ -52,5 +48,7 @@ urlpatterns = [
     url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
-
+    url(r'^bns/$', views.ProjectListView.as_view(), info_dict),
+    url(r'^bns(?P<slug>[\w-]+)/$', views.ProjectListView.as_view(), info_dict),
+    url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
 ]
