@@ -61,6 +61,7 @@ class Role(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField()
+    image = models.FileField(null=True, blank=True)
     role = models.ForeignKey(Role, on_delete=models.CASCADE,)
     project_url = models.URLField('Project URL')
     type = models.ManyToManyField(ProjectType, blank=True)
