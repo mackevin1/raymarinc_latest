@@ -82,4 +82,4 @@ class Project(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return "/work/%s/" % self.pk
+        return "/work/bns/%s/" % self.pk
