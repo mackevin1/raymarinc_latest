@@ -54,7 +54,7 @@
             <p>{{ object.client }}</p>
             <time datetime="{{ object.completion_date|date:"m Y" }}" pubdate>{{ object.completion_date|date:"F Y" }}</time>
             <p class="description">{{ object.description }}</p>
-            <img src="{{ STATIC_ROOT }}/{{ image.object_pic.url }}">
+            <img src="{{ STATIC_ROOT }}/{{ image.object_img.url }}">
 
         </section>
     {% endfor %}
