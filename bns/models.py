@@ -31,7 +31,7 @@ class ProjectImage(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
     image_path = models.CharField(max_length=100, blank=True)
-    image = models.FileField(upload_to="static/img/portfolio", blank=True)
+    image = models.FileField(upload_to="media_cdn/", blank=True)
     credit = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
     tags = TaggableManager()
