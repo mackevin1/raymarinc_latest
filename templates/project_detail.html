@@ -18,7 +18,7 @@
             <p class="description">{{ object.description }}</p>
 
             <img src="{% static 'img/portfolio/test.png' %}">
-            <img src="{{ image.object.title }}" alt="{{ project.pk }}" class="w-100 rounded">
+            <img src="{{ STATIC_URL }}/{{object.title}} " alt="{{ project.pk }}" class="w-100 rounded">
 
 	</section>
         {% comment %}The below nav assumes that you have more than one project in your database. It will display all the projects, but exclude the current.{% endcomment %}
