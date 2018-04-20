@@ -51,7 +51,7 @@ urlpatterns = [
     #url(r'^bns/project/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict),
     url(r'^work/bns(?P<slug>[\w-]+)/$', views.ProjectListView.as_view(), info_dict),
     url(r'^work/bns/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(), info_dict),
-    url(r'^work/bns/$', views.ProjectListView.as_view(template_name='product_list.html'), info_dict),
+    url(r'^work/bns/$', views.ProjectListView.as_view(), info_dict),
     #url(r'^work/bns/(?P<product_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), name='project'),
     #url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
 ]
