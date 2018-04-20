@@ -4,8 +4,8 @@ from django.contrib.auth import views as auth_views
 from bns.models import Project
 from django.conf.urls import url, include
 from django.contrib.sitemaps.views import sitemap
-from django.conf.urls.static import static
-from django.conf import settings
+#from django.conf.urls.static import static
+#from django.conf import settings
 
 from bns import views as bns_views
 from accounts import views as accounts_views
@@ -57,4 +57,4 @@ urlpatterns = [
     url(r'^work/$', views.ProjectListView.as_view(template_name='project_list.html'), info_dict),
     #url(r'^work/bns/(?P<product_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), name='project'),
     #url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
