@@ -23,6 +23,5 @@
         Other projects: {% for project in project_list %}{% if project.id != object.id %}<a href="{{ project.get_absolute_url }}">{{ project }}</a>{% endif %}{% endfor %}
         </nav>
     </article>
-    {% endblock %}
 
 {% endblock %}
