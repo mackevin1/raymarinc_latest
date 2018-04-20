@@ -17,7 +17,7 @@
             <time datetime="{{ object.completion_date|date:"m Y" }}" pubdate>{{ object.completion_date|date:"F Y" }}</time>
             <p class="description">{{ object.description }}</p>
 
-            <img src="{{ STATIC_ROOT }}../../../static/img/portfolio/{{ ProductImage.title }}">
+            <img src="{% static img/portfolio/'{{ object.ProjectImage.title }}' %}">
             <img src="{{ image.object.title }}" alt="{{ project.pk }}" class="w-100 rounded">
 
 	</section>
