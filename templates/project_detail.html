@@ -17,7 +17,7 @@
             <time datetime="{{ object.completion_date|date:"m Y" }}" pubdate>{{ object.completion_date|date:"F Y" }}</time>
             <p class="description">{{ object.description }}</p>
             <img src="{% static 'img/portfolio/test.png' %}" width="20%" height="20%">
-            <img src="{{ MEDIA_URL }}{{ image }} " alt="{{ object }}" class="w-100 rounded">
+            <img src="{{ MEDIA_URL }}{{ object.image }} " alt="{{ object }}" class="w-100 rounded">
 	</section>
         {% comment %}The below nav assumes that you have more than one project in your database. It will display all the projects, but exclude the current.{% endcomment %}
         <nav>
