@@ -52,6 +52,6 @@ urlpatterns = [
     url(r'^bns(?P<slug>[\w-]+)/$', views.ProjectListView.as_view(), info_dict),
     url(r'^work/bns/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(), info_dict),
     url(r'^work/bns/$', views.ProjectListView.as_view(), info_dict),
-    url(r'^work/(?P<pk>\d+)/bns/(?P<product_pk>\d+)/$', auth_views.LoginView.as_view(template_name='project_detail.html'), name='project'),
+    url(r'^work/bns/(?P<product_pk>\d+)/$', auth_views.LoginView.as_view(template_name='project_detail.html'), name='project'),
     #url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
 ]
