@@ -50,7 +50,7 @@
     <article>
     {% for object in object_list %}
         <section>
-            <h1><a href="{% url 'project' object.pk %}">{{ object.name }}</a></h1>
+            <h1><a href="{% url 'object' object.pk %}">{{ object.name }}</a></h1>
             <p>{{ object.client }}</p>
             <time datetime="{{ object.completion_date|date:"m Y" }}" pubdate>{{ object.completion_date|date:"F Y" }}</time>
             <p class="description">{{ object.description }}</p>
