@@ -15,6 +15,10 @@
 
         <!---->
         <header class="section-heading">
+          {% for homepage in boards %}
+            <h1>{{ homepage.headline1 }}</h1>
+            <p>{{ subhead.homepage }}</p>
+            {% endfor %}
             <h2>About Us</h2>
             <span>Everything you need to know about our Company</span>
         </header><!-- section-heading -->
@@ -93,7 +97,7 @@
           </td>
         </tr>
       {% endfor %}
-      
+
     </tbody>
   </table>
 {% endblock %}
