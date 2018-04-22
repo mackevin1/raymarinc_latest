@@ -9,10 +9,9 @@ class homepage(models.Model):
     description = models.TextField(blank=True)
     headline = models.TextField(blank=True)
     subhead = models.TextField(blank=True)
+
     def __str__(self):
         return self.name
-    class Meta:
-        db_table = 'homepage'
 
 
 class bns_home(models.Model):
