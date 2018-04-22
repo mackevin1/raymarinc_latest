@@ -9,7 +9,7 @@ class Homepage(models.Model):
     description = models.TextField(blank=True)
     headline = models.TextField(blank=True)
     subhead = models.TextField(blank=True)
-    name = models.CharField(max_length=30, unique=True)
+    name = models.CharField(max_length=30)
 
 
     def __str__(self):
@@ -22,6 +22,7 @@ class BNShome(models.Model):
     description = models.TextField(blank=True)
     headline = models.TextField(blank=True)
     subhead = models.TextField(blank=True)
+    name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
