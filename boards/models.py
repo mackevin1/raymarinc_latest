@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import Truncator
 
-class homepage(models.Model):
+class Homepage(models.Model):
     headline1 = models.CharField(max_length=250)
     backimage = models.FileField(null=True, blank=True)
     description = models.TextField(blank=True)
@@ -14,12 +14,13 @@ class homepage(models.Model):
         return self.name
 
 
-class bns_home(models.Model):
+class BNShome(models.Model):
     title = models.CharField(max_length=250)
     image = models.FileField(null=True, blank=True)
     description = models.TextField(blank=True)
     headline = models.TextField(blank=True)
     subhead = models.TextField(blank=True)
+
     def __str__(self):
         return self.name
 
