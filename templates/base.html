@@ -95,6 +95,8 @@
     </nav>
     <!-- /Fixed Top Navigation -->
     <!-- Header -->
+    {% for homepage in boards %}
+
     <header id="header" class="header-wrapper home-parallax home-fade dark-bg bg-10">
 
         <!-- Background Youtube player start-->
@@ -124,7 +126,6 @@
             </div>
         </div>
         <!-- Youtube controls end -->
-{% for homepage in boards %}
 
         <div class="color-overlay"></div>
         <div class="header-wrapper-inner">
@@ -146,6 +147,7 @@
 
         </div><!-- /.header-wrapper-inner -->
     </header>
+    {% endfor %}
     <!-- /Header -->
     <!-- About Us -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
