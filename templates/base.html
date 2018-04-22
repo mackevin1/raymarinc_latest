@@ -95,7 +95,6 @@
     </nav>
     <!-- /Fixed Top Navigation -->
     <!-- Header -->
-    {% for headline1 in homepage %}
 
     <header id="header" class="header-wrapper home-parallax home-fade dark-bg bg-10">
 
@@ -132,8 +131,11 @@
             <div class="container">
 
                 <div class="intro">
+                  {% for headline1 in homepage %}
                     <h1>{{ headline.board }}</h1>
                     <p>{{ homepage.subhead }}</p>
+                    {% endfor %}
+
                     <a href="#services" class="btn btn-default-o onPageNav">Our Services</a>
                 </div><!-- /.intro -->
 
@@ -147,7 +149,6 @@
 
         </div><!-- /.header-wrapper-inner -->
     </header>
-    {% endfor %}
     <!-- /Header -->
     <!-- About Us -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
