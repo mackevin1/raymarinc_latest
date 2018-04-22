@@ -51,26 +51,8 @@
     {% block content %}
     {% endblock %}
   </div>
-  {% for object in object_list %}
-      <article>
-          <section>
-            <div class="col-sm-4">
-              <h1><a href="{{ object.get_absolute_url }}">{{ object }}</a></h1>
-              <p>{{ object.client }}</p>
-              <time datetime="{{ object.completion_date|date:"m Y" }}" pubdate>{{ object.completion_date|date:"F Y" }}</time>
-              <p class="description">{{ object.description }}</p>
-              <img src="{{ MEDIA_URL }}{{ object.image }} " alt="{{ object }}" class="w-10 rounded" width="10%" height="10%">
-            </div>
-  	     </section>
-          {% comment %}The below nav assumes that you have more than one project in your database. It will display all the projects, but exclude the current.{% endcomment %}
-          <nav>
-          Other projects: {% for project in project_list %}
-          {% if project.id != object.id %}<a href="{{ project.get_absolute_url }}">{{ project }}</a>
-          {% endif %}
-          {% endfor %}
-          </nav>
-      </article>
-      {% endfor %}
+  {% block bns %}
+  {% endblock %}
 {% endblock body %}
 {% load static %}
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
