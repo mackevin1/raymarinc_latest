@@ -130,14 +130,10 @@
             <div class="container">
 
                 <div class="intro">
-                  1.{% for board in boards %}
-                    <h1>{{ homepage.headline }}</h1>
-                    <p>{{ homepage.subhead }}</p>
+                  {% for homepage in boards %}
+                    <h1>{{ homepages.headline }}</h1>
+                    <p>{{ homepages.subhead }}</p>
                     {% endfor %}
-                    2.{% for headline1 in boards %}
-                      <h1>{{ homepage.headline }}</h1>
-                      <p>{{ homepage.subhead }}</p>
-                      {% endfor %}
                     <a href="#services" class="btn btn-default-o onPageNav">Our Services</a>
                 </div><!-- /.intro -->
 
