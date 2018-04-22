@@ -2,16 +2,57 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}Django Boards{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/favicons/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'images/favicons/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicons/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/favicons/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicons/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicons/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/favicons/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/favicons/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicons/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'images/favicons/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicons/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/favicons/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="{% static 'images/favicons/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#000000">
+    <title>{% block title %}agLANs{% endblock %}</title>
 {% block stylesheet %}
-    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/app.css' %}">
-    <link rel="stylesheet" href="{% static 'css/simplemde.min.css' %}">
+<!-- css -->
+<link rel="stylesheet" href="{% static 'lib/bootstrap/dist/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'lib/fontawesome/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'lib/owlcarousel/owl-carousel/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'lib/owlcarousel/owl-carousel/owl.theme.css' %}">
+<link rel="stylesheet" href="{% static 'lib/FlexSlider/flexslider.css' %}">
+<link rel="stylesheet" href="{% static 'lib/magnific-popup/dist/magnific-popup.css' %}">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:100,300,400">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100,300,400">
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/ie_fix.css' %}">
+
+<script src="{% static 'lib/components-modernizr/modernizr.js' %}"></script>
+<script src="{% static 'lib/jquery/dist/jquery.js' %}"></script>
+<script src="{% static 'lib/bootstrap/dist/js/bootstrap.js' %}"></script>
     {% endblock %}  <!-- HERE -->
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#main-nav-collapse" data-offset="100">>
     {% block body %}  <!-- HERE -->
+    <!-- Fixed Top Navigation -->
+    <nav id="fixedTopNav" class="navbar navbar-fixed-top main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" >
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                    <span class="sr-only">agLANs</span>
+                    <span class="ion-drag"></span>
+                </button>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}">Django Boards</a>
