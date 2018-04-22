@@ -223,6 +223,60 @@
         </div><!-- /.container -->
     </nav>
     <!-- /Fixed Top Navigation -->
+    <!-- Header -->
+    <header id="header" class="header-wrapper home-parallax home-fade dark-bg bg-10">
+
+        <!-- Background Youtube player start-->
+        <div id="videoBackground"
+             class="overlay"
+             data-property="{
+                            videoURL:'https://www.youtube.com/watch?v=1ufqweCJm2k',
+                            containment:'.header-wrapper',
+                            startAt:22,
+                            stopAt:290,
+                            mute:false,
+                            autoPlay:true,
+                            loop:true,
+                            opacity:1,
+                            showControls:false,
+                            showYTLogo:false,
+                            vol:25}"></div>
+        <!-- Background Youtube player end -->
+
+        <!-- Youtube controls start-->
+        <div class="video-controls-box">
+            <div class="container">
+                <div class="video-controls">
+                    <a id="video-volume" class="fa fa-volume-up" href="#">&nbsp;</a>
+                    <a id="video-play" class="fa fa-pause" href="#">&nbsp;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Youtube controls end -->
+
+
+        <div class="color-overlay"></div>
+        <div class="header-wrapper-inner">
+            <div class="container">
+
+                <div class="intro">
+                    <h1>To Begin, Begin</h1>
+                    <p>Thats How My Life Rolls</p>
+                    <a href="#services" class="btn btn-default-o onPageNav">Our Services</a>
+                </div><!-- /.intro -->
+
+            </div><!-- /.container -->
+
+            <div class="arrow-down">
+                <a href="#about-us" class="onPageNav">
+                    <i class="ion-ios-arrow-down"></i>
+                </a>
+            </div><!-- /.arrow-down -->
+
+        </div><!-- /.header-wrapper-inner -->
+    </header>
+    <!-- /Header -->
+    <!-- About Us -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}">Django Boards</a>
