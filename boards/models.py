@@ -12,7 +12,6 @@ class bns_home(models.Model):
         return self.name
     class Meta:
         db_table = 'bns_home'
-        ordering = ('-completion_date',)
 
 
 class Board(models.Model):
