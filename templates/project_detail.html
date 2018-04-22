@@ -2,10 +2,10 @@
 {% load static %}
 
 
-{% block body_id %}project_detail{% endblock %}
-
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Boards</li>
+{% endblock %}
 {% block content %}
-<p>test</p>
 {% for object in object_list %}
     <article>
         <section>
