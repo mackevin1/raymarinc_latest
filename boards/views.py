@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse
 
 from .forms import NewTopicForm, PostForm
-from .models import Board, Post, Topic
+from .models import Board, Post, Topic, Homepage, BNShome
 from bns.models import Project
 
 class BoardListView(ListView):
@@ -16,7 +16,11 @@ class BoardListView(ListView):
     context_object_name = 'boards'
     template_name = 'home.html'
 
-
+class HomepageListView(ListView):
+    model = Homepage
+    context_object_nake = 'homepages'
+    template_name = 'home.html'
+    
 class TopicListView(ListView):
     model = Topic
     context_object_name = 'topics'
