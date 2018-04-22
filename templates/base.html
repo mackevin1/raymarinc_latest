@@ -131,8 +131,10 @@
             <div class="container">
 
                 <div class="intro">
+                  {% for homepage in homepages %}
                     <h1>{{ homepage.headline }}</h1>
                     <p>{{ homepage.subhead }}</p>
+                    {% endfor %}
 
                     <a href="#services" class="btn btn-default-o onPageNav">Our Services</a>
                 </div><!-- /.intro -->

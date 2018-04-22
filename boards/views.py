@@ -18,7 +18,7 @@ class BoardListView(ListView):
 
 class HomepageListView(ListView):
     model = Homepage
-    context_object_nake = 'homepages'
+    context_object_name = 'homepages'
     template_name = 'home.html'
     
 class TopicListView(ListView):
