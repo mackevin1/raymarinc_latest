@@ -93,13 +93,7 @@
           </td>
         </tr>
       {% endfor %}
-      {% for homepage in boards %}
-        <tr>
-          <td>
-            <a href="{% url 'board_topics' board.pk %}">{{ homepage.headline }}</a>
-            <small class="text-muted d-block">{{ board.description }}</small>
-          </td>
-          {% endfor %}
+      
     </tbody>
   </table>
 {% endblock %}
