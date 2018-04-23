@@ -1,10 +1,10 @@
 {% block ridr %}
-{% for product in boards %}
+{% for products in boards %}
 <!-- Why-choose-us -->
 <section id="why-choose-us" class="section why-choose-us">
     <div class="container">
         <header class="section-heading">
-            <h2>{{ product.category }}</h2>
+            <h2>{{ products.category }}</h2>
             <span>{{ board.sectionridrsubhead }}</span>
         </header>
 
@@ -13,11 +13,11 @@
                 <div class="col-sm-3 why-explain-wrap">
 
                     <!-- why-choose-us-text -->
-                    <h4>{{ product.name }}</h4>
+                    <h4>{{ products.name }}</h4>
                     <div class="why-explain top top-1">
                         <p>{{ board.sectionridr1 }}</p>
                         <figure class="about-content center">
-                            <img class="img-responsive center-block" src="{{ MEDIA_URL }}{{ product.images }}" alt="">
+                            <img class="img-responsive center-block" src="{{ MEDIA_URL }}{{ products.images }}" alt="">
                         </figure>
                     </div>
 
