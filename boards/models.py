@@ -42,7 +42,7 @@ class BNShome(models.Model):
 
 class Board(models.Model):
     headline = models.CharField(max_length=250)
-    subhead = models.CharField(blank=True)
+    subhead = models.CharField(blank=True, max_length=200)
     name = models.CharField(max_length=30, unique=True)
     description = models.CharField(max_length=100)
     def __str__(self):
