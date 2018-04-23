@@ -169,7 +169,7 @@ class ProductImages(models.Model):
     primary = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        return self.ProductName
+        return self.productname
 
 class Category(models.Model):
     name = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
