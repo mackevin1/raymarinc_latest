@@ -66,6 +66,7 @@ class Board(models.Model):
     imagebns4 = models.FileField(null=True, blank=True)
     sectionridrheadline = models.CharField(blank=True, max_length=250)
     sectionridrsubhead = models.CharField(blank=True, max_length=250)
+    sectionridrbody = models.CharField(blank=True, max_length=1000)
     sectionridr1head = models.TextField(blank=True, max_length=250)
     sectionridr1 = models.CharField(blank=True, max_length=250)
     sectionridr2head = models.TextField(blank=True, max_length=250)
