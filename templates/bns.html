@@ -6,7 +6,7 @@
     <div class="container" id="video-info">
         <div class="row">
             <div class="col-sm-6">
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                 {{ board.sectionbnswireless}}
               </div>
                 <div class="col-sm-6">
@@ -20,12 +20,14 @@
 
 
             <div class="col-sm-6">
-
-                <!-- video-right -->
-                <div class="video-right">
-                    Create Your Own Slogan <br>Golden Ratio <br>Here
-                </div>
-
+              <div class="col-sm-6">
+              {{ board.sectionbnscellular}}
+              </div>
+              <div class="col-sm-6">
+                <figure class="about-content center">
+                    <img class="img-responsive center-block" src="{{ MEDIA_URL }}{{ board.imagebns2 }}" alt="">
+                </figure>
+              </div>
             </div><!-- col-sm-4 -->
         </div><!-- row -->
 
