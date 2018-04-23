@@ -32,7 +32,16 @@ html, body {
   -webkit-animation: spinner 700ms infinite linear;
   animation: spinner 700ms infinite linear;
   z-index: 100001; }
-
+#myVideo{
+  right: 0;
+bottom: 0;
+min-width: 100%;
+max-height: 90%;
+min-height:800px;
+z-index: -10;
+float: left;
+position: absolute;
+}
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
