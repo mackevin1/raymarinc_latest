@@ -43,8 +43,19 @@ class BNShome(models.Model):
 class Board(models.Model):
     headline = models.CharField(max_length=250)
     subhead = models.CharField(blank=True, max_length=200)
+    headlineabout = models.CharField(max_length=250)
+    subheadabout = models.CharField(blank=True, max_length=200)
+    bodyleftabout = models.TextField(blank=True, max_length=500)
+    headlineleftabout = models.TextField(blank=True, max_length=1000)
+    bodyrightabout = models.TextField(blank=True, max_length=500)
+    headlinerightabout = models.TextField(blank=True, max_length=1000)
     name = models.CharField(max_length=30, unique=True)
     description = models.CharField(max_length=100)
+    image1 = models.FileField(null=True, blank=True)
+    image2 = models.FileField(null=True, blank=True)
+    image3 = models.FileField(null=True, blank=True)
+    image4 = models.FileField(null=True, blank=True)
+
     def __str__(self):
         return self.name
     def get_posts_count(self):
