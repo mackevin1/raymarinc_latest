@@ -3,6 +3,8 @@
     <div class="container">
 
         <!---->
+        {% for board in boards %}
+
         <header class="section-heading">
             <h2>{{ board.headlineabout }}</h2>
             <span></span>
@@ -12,7 +14,6 @@
         <div class="section-content">
             <div class="row">
                 <div class="col-sm-4">
-{% for board in boards %}
                     <!-- about-left -->
                     <div class="about-content left">
                         <p>{{ board.bodyleftabout }}</p>
