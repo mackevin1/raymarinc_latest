@@ -83,7 +83,7 @@ class Board(models.Model):
     sectionnocsubhead = models.CharField(blank=True, max_length=250)
     sectionnocbody = models.CharField(blank=True, max_length=1000)
     sectionnoc1head = models.TextField(blank=True, max_length=250)
-    sectionnoc1 = models.CharField(blank=True, max_length=250)
+    sectionnoc1 = models.CharField(blank=True, max_length=1000)
     sectionnoc2head = models.TextField(blank=True, max_length=250)
     sectionnoc2 = models.CharField(blank=True, max_length=250)
     sectionnoc3head = models.TextField(blank=True, max_length=250)
