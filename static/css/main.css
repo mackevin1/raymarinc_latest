@@ -1040,7 +1040,7 @@ blockquote p {
   .expertise .expertise-description {
     margin-bottom: 0; } }
 .video-player {
-  background: url(../img/backgrounds/bg-video.jpg) no-repeat center bottom;
+  background: url(../img/backgrounds/bg-video.png) no-repeat center bottom;
   background-size: cover;
   color: #ffffff;
   text-transform: uppercase; }
