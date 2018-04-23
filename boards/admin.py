@@ -1,10 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Board, Topic, BNShome, Homepage, introduction
+from .models import Product, Category
 
-admin.site.register(Board)
-admin.site.register(Topic)
-admin.site.register(BNShome)
-admin.site.register(Homepage)
-admin.site.register(introduction)
+admin.site.register(Product)
+admin.site.register(Category)
