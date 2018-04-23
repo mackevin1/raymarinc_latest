@@ -2,32 +2,11 @@
 {% for board in boards %}
 <!-- Service -->
 <section id="services" class="section services">
+  <video autoplay muted loop id="myVideo">
+    <source src="{{ board.imagenoc2 }}" type="video/mp4">
+  </video>
     <div class="container">
-      <div id="videoBackground"
-           class="overlay"
-           data-property="{
-                          videoURL:'{{ MEDIA_URL }}{{ board.imagenoc2 }}',
-                          containment:'.header-wrapper',
-                          startAt:22,
-                          stopAt:290,
-                          mute:false,
-                          autoPlay:true,
-                          loop:true,
-                          opacity:1,
-                          showControls:false,
-                          showYTLogo:false,
-                          vol:25}"></div>
-      <!-- Background Youtube player end -->
 
-      <!-- Youtube controls start-->
-      <div class="video-controls-box">
-          <div class="container">
-              <div class="video-controls">
-                  <a id="video-volume" class="fa fa-volume-up" href="#">&nbsp;</a>
-                  <a id="video-play" class="fa fa-pause" href="#">&nbsp;</a>
-              </div>
-          </div>
-      </div>
         <!---->
         <header class="section-heading">
             <h2>{{ board.sectionnocheadline }}</h2>
