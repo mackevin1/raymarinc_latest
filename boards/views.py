@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse
 
 from .forms import NewTopicForm, PostForm
-from .models import Board, Post, Topic, Homepage, BNShome, introduction, Products, Category, Images
+from .models import Board, Post, Topic, Homepage, BNShome, introduction, Products, Category, ProductImages
 from bns.models import Project
 
 class BoardListView(ListView):
