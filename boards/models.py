@@ -147,8 +147,9 @@ def get_message_as_markdown(self):
 
 class AddCategory(models.Model):
     category = models.CharField(category, through='AddCategory')
-        def __str__(self):
-            return self.category
+
+    def __str__(self):
+        return self.category
 
 class AddSubCategory(models.Model):
     category = models.ManyToManyField(category, through='AddCategory')
