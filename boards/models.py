@@ -55,7 +55,13 @@ class Board(models.Model):
     image2 = models.FileField(null=True, blank=True)
     image3 = models.FileField(null=True, blank=True)
     image4 = models.FileField(null=True, blank=True)
-
+    sectionbnsheadline = models.CharField(max_length=250)
+    sectionbnssubhead = models.CharField(max_length=250)
+    sectionbnsbody = models.TextField(blank=True, max_length=1000)
+    imagebns1 = models.FileField(null=True, blank=True)
+    imagebns2 = models.FileField(null=True, blank=True)
+    imagebns3 = models.FileField(null=True, blank=True)
+    imagebns4 = models.FileField(null=True, blank=True)
     def __str__(self):
         return self.name
     def get_posts_count(self):
