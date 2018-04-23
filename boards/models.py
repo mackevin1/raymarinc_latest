@@ -79,6 +79,21 @@ class Board(models.Model):
     imageridr2 = models.FileField(null=True, blank=True)
     imageridr3 = models.FileField(null=True, blank=True)
     imageridr4 = models.FileField(null=True, blank=True)
+    sectionnocheadline = models.CharField(blank=True, max_length=250)
+    sectionnocsubhead = models.CharField(blank=True, max_length=250)
+    sectionnocbody = models.CharField(blank=True, max_length=1000)
+    sectionnoc1head = models.TextField(blank=True, max_length=250)
+    sectionnoc1 = models.CharField(blank=True, max_length=250)
+    sectionnoc2head = models.TextField(blank=True, max_length=250)
+    sectionnoc2 = models.CharField(blank=True, max_length=250)
+    sectionnoc3head = models.TextField(blank=True, max_length=250)
+    sectionnoc3 = models.CharField(blank=True, max_length=250)
+    sectionnoc4head = models.TextField(blank=True, max_length=250)
+    sectionnoc4 = models.CharField(blank=True, max_length=250)
+    imagenoc1 = models.FileField(null=True, blank=True)
+    imagenoc2 = models.FileField(null=True, blank=True)
+    imagenoc3 = models.FileField(null=True, blank=True)
+    imagenoc4 = models.FileField(null=True, blank=True)
     def __str__(self):
         return self.name
     def get_posts_count(self):
