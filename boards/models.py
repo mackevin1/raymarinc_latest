@@ -15,6 +15,16 @@ class Homepage(models.Model):
     def __str__(self):
         return self.name
 
+class introduction(models.Model):
+    headline = models.TextField(blank=True)
+    subhead = models.TextField(blank=True)
+    backimage = models.FileField(null=True, blank=True)
+    description = models.TextField(blank=True)
+
+
+    def __str__(self):
+        return self.name
+
 
 class BNShome(models.Model):
     title = models.CharField(max_length=250)

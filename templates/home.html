@@ -15,9 +15,17 @@
 
         <!---->
         <header class="section-heading">
-          {% for homepage in boards %}
-            <h1>{{ homepage.headline1 }}</h1>
-            <p>{{ subhead.homepage }}</p>
+        1  {% for homepage in boards %}
+            <h1>{{ homepage.headline }}</h1>
+            <p>{{ homepage.subhead }}</p>
+            {% endfor %}
+          2 {% for homepage in boards %}
+            <h1>{{ homepage.headline }}</h1>
+            <p>{{ homepage.subhead }}</p>
+            {% endfor %}
+            {% for introduction in boards %}
+            <h1>{{ introduction.headline }}</h1>
+            <p>{{ introduction.subhead }}</p>
             {% endfor %}
             <h2>About Us</h2>
             <span>Everything you need to know about our Company</span>
