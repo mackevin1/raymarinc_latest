@@ -42,10 +42,11 @@
     {% endblock %}  <!-- HERE -->
   </head>
   <body data-spy="scroll" data-target="#main-nav-collapse" data-offset="100">
+
+    {% block body %}  <!-- HERE -->
     <div class="page-loader">
         <div class="loader">Loading...</div>
     </div>
-    {% block body %}  <!-- HERE -->
     <!-- Fixed Top Navigation -->
     {% block navigation %}
     <nav id="fixedTopNav" class="navbar navbar-fixed-top main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" >
