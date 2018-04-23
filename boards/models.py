@@ -58,6 +58,8 @@ class Board(models.Model):
     sectionbnsheadline = models.CharField(max_length=250)
     sectionbnssubhead = models.CharField(max_length=250)
     sectionbnsbody = models.TextField(blank=True, max_length=1000)
+    sectionbnswireless = models.CharField(max_length=250)
+    sectionbnscellular = models.CharField(max_length=250)
     imagebns1 = models.FileField(null=True, blank=True)
     imagebns2 = models.FileField(null=True, blank=True)
     imagebns3 = models.FileField(null=True, blank=True)
