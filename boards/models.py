@@ -153,7 +153,7 @@ class Products(models.Model):
     images = models.FileField(null=True, blank=True)
     name = models.CharField(max_length=100)
     productid = models.CharField(max_length=100)
-    model-make = models.TextField(max_length=100)
+    tbipartnumber = models.TextField(max_length=100)
     category = models.CharField(max_length=100)
     subcategory = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
