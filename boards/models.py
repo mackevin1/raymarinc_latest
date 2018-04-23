@@ -144,3 +144,14 @@ class Post(models.Model):
 
 def get_message_as_markdown(self):
         return mark_safe(markdown(self.message, safe_mode='escape'))
+
+class AddCategory(models.Model):
+    category = models.CharField(category, through='AddCategory')
+        def __str__(self):
+            return self.category
+
+class AddSubCategory(models.Model):
+    category = models.ManyToManyField(category, through='AddCategory')
+    subcategory = models.ForeignKey(Person, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.subcategory
