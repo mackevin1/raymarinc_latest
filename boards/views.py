@@ -19,6 +19,13 @@ class AddCategoryListView(ListView):
     model = AddCategory
     context_object_name = 'category'
     template_name = 'home.html'
+
+class AddSubCategoryListView(ListView):
+    model = AddSubCategory
+    context_object_name = 'category'
+    template_name = 'home.html'
+
+
 class HomepageListView(ListView):
     model = Homepage
     context_object_name = 'homepages'
