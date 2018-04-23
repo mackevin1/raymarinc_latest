@@ -4,8 +4,8 @@
 
         <!---->
         <header class="section-heading">
-            <h2>About Us</h2>
-            <span>Everything you need to know about our Company</span>
+            <h2>{{ board.headlineabout }}</h2>
+            <span></span>
         </header><!-- section-heading -->
         <!---->
 
@@ -15,7 +15,6 @@
 {% for board in boards %}
                     <!-- about-left -->
                     <div class="about-content left">
-                        <h4>{{ board.headlineabout }}</h4>
                         <p>{{ board.bodyleftabout }}</p>
                     </div>
 
@@ -34,9 +33,8 @@
 
                     <!-- about-right -->
                     <div class="about-content right">
-                        <h4>We're Friendly</h4>
-                        <p>Lorem adipipsum dolor sit amet, consecteturno aisicing elit. Necessitatibus illo vel dolorumsa soluta consectetur doloribus sit. Delectus tenetur odit dicta vitae debitis  susc ipitaut voluptas quaerat dolorum.</p>
-                    </div>
+                        <p>{{ board.bodyrightabout }}</p>
+                      </div>
 
                 </div><!-- col-sm-4 -->
             </div><!-- row -->
