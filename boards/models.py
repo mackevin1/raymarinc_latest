@@ -146,13 +146,14 @@ def get_message_as_markdown(self):
         return mark_safe(markdown(self.message, safe_mode='escape'))
 
 class AddCategory(models.Model):
-    category = models.CharField(null=False)
-
+    category = models.CharField(category, null=False, related_name='AddSubCategory')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(null=True)
     def __str__(self):
         return self.category
 
 class AddSubCategory(models.Model):
-    category = models.ManyToManyField(category, through='AddCategory')
+    category = models.ManyToManyField(category, related_name='AddCategory', on_delete=models.CASCADE)
     subcategory = models.ForeignKey(category, on_delete=models.CASCADE)
     def __str__(self):
         return self.subcategory
