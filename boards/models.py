@@ -20,6 +20,7 @@ class introduction(models.Model):
     subhead = models.TextField(blank=True)
     backimage = models.FileField(null=True, blank=True)
     description = models.TextField(blank=True)
+    name = models.CharField(max_length=30)
 
 
     def __str__(self):
