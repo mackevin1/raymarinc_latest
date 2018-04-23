@@ -52,9 +52,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'^bns/project/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict),
     #url(r'^work/(?P<slug>\d+)/$', views.ProjectListView.as_view(template_name='showcase/project_detail.html'), info_dict),
-    url(r'^work/bns/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_object.html'), info_dict),
-    url(r'^work/bns/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict),
-    url(r'^work/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict, name='bns'),
+    #url(r'^work/bns/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_object.html'), info_dict),
+    #url(r'^work/bns/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict),
+    #url(r'^work/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict, name='bns'),
     #url(r'^work/bns/(?P<product_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), name='project'),
     #url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
