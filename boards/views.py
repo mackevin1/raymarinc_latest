@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse
 
 from .forms import NewTopicForm, PostForm
-from .models import Board, Post, Topic, Homepage, BNShome, introduction
+from .models import Board, Post, Topic, Homepage, BNShome, introduction, Products, Category, Images
 from bns.models import Project
 
 class BoardListView(ListView):
@@ -134,3 +134,15 @@ def get_queryset(self):
     self.project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
     queryset = self.project.order_by('-last_updated')
     return queryset
+
+class ProductListView(ListView):
+    model = Products
+    context_object_name = 'products'
+    template_name = 'home.html'
+    paginate_by = 20
+
+class CategoryListView(ListView):
+    model = Category
+    context_object_name = 'category'
+    template_name = 'home.html'
+    paginate_by = 20
