@@ -164,12 +164,12 @@ class Products(models.Model):
         return self.name
 
 class ProductImages(models.Model):
-    productname = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
+    name = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
     images = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
     primary = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        return self.productname
+        return self.name
 
 class Category(models.Model):
     name = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
