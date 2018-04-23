@@ -1,0 +1,103 @@
+{% block ridr %}
+{% for board in boards %}
+<!-- Why-choose-us -->
+<section id="why-choose-us" class="section why-choose-us">
+    <div class="container">
+        <header class="section-heading">
+            <h2>{{ board.sectionridrheadline }}</h2>
+            <span>{{ board.sectionridrsubhead }}</span>
+        </header>
+
+        <div class="section-content">
+            <div class="row">
+                <div class="col-sm-3 why-explain-wrap">
+
+                    <!-- why-choose-us-text -->
+                    <h4>{{ board.sectionridr1head }}</h4>
+                    <div class="why-explain top top-1">
+                        <p>{{ board.sectionridr1 }}</p>
+                    </div>
+
+                </div><!-- col-md-4 col-sm-6 -->
+
+                <div class="col-sm-3 why-explain-wrap">
+
+                    <!-- why-choose-us-text -->
+                    <h4>{{ board.sectionridr2head }}</h4>
+                    <div class="why-explain top top-2">
+                        <p>{{ board.sectionridr2 }}</p>
+                    </div>
+
+                </div><!-- col-md-4 col-sm-6 -->
+
+                <div class="col-sm-3 why-explain-wrap">
+
+                    <!-- why-choose-us-text -->
+                    <h4>{{ board.sectionridr3head }}</h4>
+                    <div class="why-explain top top-3">
+                        <p>{{ board.sectionridr3 }}</p>
+                    </div>
+
+                </div><!-- col-md-4 col-sm-6 -->
+                <div class="col-sm-3 why-explain-wrap">
+
+                    <!-- why-choose-us-text -->
+                    <h4>{{ board.sectionridr4head }}</h4>
+                    <div class="why-explain top top-3">
+                        <p>{{ board.sectionridr4 }}</p>
+                    </div>
+
+                </div><!-- col-md-4 col-sm-6 -->
+
+            </div><!-- row -->
+
+            <!-- why-choose-us-image -->
+            <figure class="why-us-image">
+                <img class="img-responsive center-block hidden-xs" src="assets/images/why-choose-us/1.png" alt="">
+            </figure>
+
+            <div class="row">
+
+                <div class="col-sm-4 why-explain-wrap">
+
+                    <!-- why-choose-us-text -->
+                    <div class="why-explain bottom bottom-1">
+                        <h4>Dedicated</h4>
+                    </div>
+                    <p>
+                        Sollicitudin velit malesuada Aliqua andit diam feugiat ex.For those who
+                    </p>
+
+                </div><!-- col-md-4 col-sm-6 -->
+
+                <div class="col-sm-4 why-explain-wrap">
+
+                    <!-- why-choose-us-text -->
+                    <div class="why-explain bottom bottom-2">
+                        <h4>24/7 Support</h4>
+                    </div>
+                    <p>
+                        Sollicitudin velit malesuada Aliqua andit diam feugiat ex.For those who
+                    </p>
+
+                </div><!-- col-md-4 col-sm-6 -->
+
+                <div class="col-sm-4 why-explain-wrap last">
+
+                    <!-- why-choose-us-text -->
+                    <div class="why-explain bottom bottom-3">
+                        <h4>Enthusiastic</h4>
+                    </div>
+                    <p class="last">
+                        Sollicitudin velit malesuada Aliqua andit diam feugiat ex.For those who
+                    </p>
+
+                </div><!-- col-md-4 col-sm-6 -->
+
+            </div><!-- row -->
+        </div><!-- section-content -->
+    </div><!-- container -->
+</section>
+<!-- /Why-choose-us -->
+{% endfor %}
+{% endblock ridr %}
