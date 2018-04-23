@@ -1,5 +1,5 @@
 {% block ridr %}
-{% for products in boards %}
+{% for product in boards %}
 <!-- Why-choose-us -->
 <section id="why-choose-us" class="section why-choose-us">
     <div class="container">
@@ -13,7 +13,7 @@
                 <div class="col-sm-3 why-explain-wrap">
 
                     <!-- why-choose-us-text -->
-                    <h4>{{ board.sectionridr1head }}</h4>
+                    <h4>{{ product.name }}</h4>
                     <div class="why-explain top top-1">
                         <p>{{ board.sectionridr1 }}</p>
                         <figure class="about-content center">
