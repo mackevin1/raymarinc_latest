@@ -1,5 +1,5 @@
 {% block ridr %}
-{% for board in boards %}
+{% for products in boards %}
 <!-- Why-choose-us -->
 <section id="why-choose-us" class="section why-choose-us">
     <div class="container">
@@ -17,7 +17,7 @@
                     <div class="why-explain top top-1">
                         <p>{{ board.sectionridr1 }}</p>
                         <figure class="about-content center">
-                            <img class="img-responsive center-block" src="{{ MEDIA_URL }}{{ board.imageridr1 }}" alt="">
+                            <img class="img-responsive center-block" src="{{ MEDIA_URL }}{{ products.images }}" alt="">
                         </figure>
                     </div>
 
