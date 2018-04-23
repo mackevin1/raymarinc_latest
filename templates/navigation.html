@@ -1,0 +1,51 @@
+{% extends base.html %}
+<nav id="fixedTopNav" class="navbar navbar-fixed-top main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" >
+    <div class="container">
+
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                <span class="sr-only">agLANs</span>
+                <span class="ion-drag"></span>
+            </button>
+            <!-- Logo -->
+            <div class="navbar-brand" itemscope itemtype="https://schema.org/Organization">
+                <span itemprop="name" class="sr-only">agLANs</span>
+                <a itemprop="url" href="{% url 'home' %}">
+                    agLANs
+                </a>
+            </div>
+            <!-- /Logo -->
+
+        </div><!-- /.navbar-header -->
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+            <ul class="nav navbar-nav navbar-right" role="menu">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Home</span></a>
+                        </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>BNS</span></a>
+                    </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>power</span></a>
+                        </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>NOC Smart</span></a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Components</span></a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /Navigation Links -->
+
+    </div><!-- /.container -->
+</nav>
+<!-- /Fixed Top Navigation -->

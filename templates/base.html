@@ -44,56 +44,9 @@
   <body data-spy="scroll" data-target="#main-nav-collapse" data-offset="100">
     {% block body %}  <!-- HERE -->
     <!-- Fixed Top Navigation -->
-    <nav id="fixedTopNav" class="navbar navbar-fixed-top main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" >
-        <div class="container">
-
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
-                    <span class="sr-only">agLANs</span>
-                    <span class="ion-drag"></span>
-                </button>
-                <!-- Logo -->
-                <div class="navbar-brand" itemscope itemtype="https://schema.org/Organization">
-                    <span itemprop="name" class="sr-only">agLANs</span>
-                    <a itemprop="url" href="{% url 'home' %}">
-                        agLANs
-                    </a>
-                </div>
-                <!-- /Logo -->
-
-            </div><!-- /.navbar-header -->
-            <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="main-nav-collapse">
-                <ul class="nav navbar-nav navbar-right" role="menu">
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Home</span></a>
-                            </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>BNS</span></a>
-                        </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>power</span></a>
-                            </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>NOC Smart</span></a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Components</span></a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /Navigation Links -->
-
-        </div><!-- /.container -->
-    </nav>
-    <!-- /Fixed Top Navigation -->
+    {% block navigation %}
+    {% include navigation.html %}
+    {% endblock %}
     <!-- Header -->
     <header id="header" class="header-wrapper home-parallax home-fade dark-bg bg-10">
 
@@ -149,7 +102,53 @@
     </header>
     <!-- /Header -->
     <!-- About Us -->
+    <section id="about-us" class="section about-us">
+        <div class="container">
 
+            <!---->
+            <header class="section-heading">
+                <h1>{{ homepage.headline }}</h1>
+                <p>{{ homepage.subhead }}</p>
+
+                <h2>About Us</h2>
+                <span>Everything you need to know about our Company</span>
+            </header><!-- section-heading -->
+            <!---->
+
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-sm-4">
+
+                        <!-- about-left -->
+                        <div class="about-content left">
+                            <h4>We're Creative</h4>
+                            <p>Lorem adipipsum idolor sit iamet, iconsectetur aisicing elit. Necessitatibus illo vel dolorum soluta consectetur doloribus sit. Delectus non tenetur odit dicta vitae debitis suscipitaut voluptas quaerat consectetur.</p>
+                        </div>
+
+                    </div><!-- col-sm-4 -->
+
+                    <div class="col-sm-4">
+
+                        <!-- about-center -->
+                        <figure class="about-content center">
+                            <img class="img-responsive center-block" src="{% static 'img/about-us/center_image.jpg' %}" alt="">
+                        </figure>
+
+                    </div><!-- col-sm-4 -->
+
+                    <div class="col-sm-4">
+
+                        <!-- about-right -->
+                        <div class="about-content right">
+                            <h4>We're Friendly</h4>
+                            <p>Lorem adipipsum dolor sit amet, consecteturno aisicing elit. Necessitatibus illo vel dolorumsa soluta consectetur doloribus sit. Delectus tenetur odit dicta vitae debitis  susc ipitaut voluptas quaerat dolorum.</p>
+                        </div>
+
+                    </div><!-- col-sm-4 -->
+                </div><!-- row -->
+            </div><!-- section-content -->
+        </div><!-- container -->
+    </section>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}">Django Boards</a>
