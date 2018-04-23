@@ -146,7 +146,7 @@ def get_message_as_markdown(self):
         return mark_safe(markdown(self.message, safe_mode='escape'))
 
 class AddCategory(models.Model):
-    category = models.CharField(category, null=False)
+    category = models.CharField(null=False)
 
     def __str__(self):
         return self.category
