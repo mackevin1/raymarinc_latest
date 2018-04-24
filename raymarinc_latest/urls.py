@@ -58,6 +58,6 @@ urlpatterns = [
     url(r'^work/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict, name='bns'),
     #url(r'^work/bns/(?P<product_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), name='project'),
     #url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
-    #path('pages/', include('django.contrib.flatpages.urls')),
+    url('pages/', include('django.contrib.flatpages.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
