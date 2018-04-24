@@ -153,7 +153,11 @@ class ProductImages(models.Model):
     primary = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+if self.ProductImages==None:
+    return "No Product Image"
+return self.name
+
+
 
 class Products(models.Model):
     companyname = models.CharField(max_length=100)
