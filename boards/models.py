@@ -152,7 +152,10 @@ class ProductImages(models.Model):
     images = models.FileField(null=True, blank=True)
     primary = models.FileField(null=True, blank=True)
 
-
+    def __str__(self):
+        if self.name==None:
+            return "No Product Image"
+        return self.name
 
 
 
@@ -170,7 +173,7 @@ class Products(models.Model):
     searchkeys = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return self.tbipartnumber
 
 
 
