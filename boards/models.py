@@ -153,7 +153,7 @@ class ProductImages(models.Model):
     primary = models.FileField(null=True, blank=True)
 
     def __str__(self):
-        if self.ProductImages==None:
+        if self.name==None:
             return "No Product Image"
         return self.name
 
