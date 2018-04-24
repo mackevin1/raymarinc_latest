@@ -35,7 +35,7 @@
         <div class="container">
 
             <div class="intro">
-{% for board, products, productimages in boards %}
+{% for products in boards %}
                 <h1>{{ products.tbipartnumber }}</h1>
                 <p>{{ products.proddescription }}</p>
                 {{ board.name }}
