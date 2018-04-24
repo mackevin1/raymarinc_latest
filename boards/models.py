@@ -38,16 +38,18 @@ class BNShome(models.Model):
 
     def __str__(self):
         return self.name
+
 class ProductImages(models.Model):
     name = models.CharField(max_length=100)
     images = models.FileField(null=True, blank=True)
     primary = models.FileField(null=True, blank=True)
-    categoryimages = models.ManyToManyField(Category, through='Products')
+    categoryimages = models.ManyToManyField(Category, through='Board')
 
     def __str__(self):
         if self.name==None:
             return "No Product Image"
         return self.name
+
 class Category(models.Model):
     tbipartnumber = models.TextField(max_length=1000)
     name = models.TextField(max_length=1000)
@@ -68,6 +70,17 @@ class Board(models.Model):
     headlinerightabout = models.TextField(blank=True, max_length=1000)
     name = models.CharField(max_length=30, unique=True)
     description = models.CharField(max_length=100)
+    companyname = models.CharField(max_length=100)
+    images = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
+    name = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
+    productid = models.CharField(max_length=100)
+    tbipartnumber = models.TextField(max_length=100)
+    category = models.CharField(max_length=100)
+    subcategory = models.CharField(max_length=100)
+    proddescription = models.TextField(max_length=1000)
+    value = models.CharField(max_length=100)
+    tags = models.CharField(max_length=100)
+    searchkeys = models.CharField(max_length=100)
     images = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
     image2 = models.FileField(null=True, blank=True)
     image3 = models.FileField(null=True, blank=True)
