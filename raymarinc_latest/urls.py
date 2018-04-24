@@ -6,8 +6,6 @@ from django.conf.urls import url, include
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
 from django.conf import settings
-from django.contrib.flatpages import views
-
 
 from bns import views as bns_views
 from accounts import views as accounts_views
@@ -46,12 +44,12 @@ urlpatterns = [
     url(r'^settings/password/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='password_change_done.html'),
         name='password_change_done'),
 
-    #url(r'^boards/(?P<pk>\d+)/$', views.TopicListView.as_view(), name='board_topics'),
-    #url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
-    #url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$', views.PostListView.as_view(), name='topic_posts'),
-    #url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/reply/$', views.reply_topic, name='reply_topic'),
-    #url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
-    #    views.PostUpdateView.as_view(), name='edit_post'),
+    url(r'^boards/(?P<pk>\d+)/$', views.TopicListView.as_view(), name='board_topics'),
+    url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
+    url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$', views.PostListView.as_view(), name='topic_posts'),
+    url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/reply/$', views.reply_topic, name='reply_topic'),
+    url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
+        views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
     #url(r'^bns/project/(?P<project_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict),
     #url(r'^work/(?P<slug>\d+)/$', views.ProjectListView.as_view(template_name='showcase/project_detail.html'), info_dict),
@@ -60,6 +58,6 @@ urlpatterns = [
     url(r'^work/$', views.ProjectListView.as_view(template_name='project_detail.html'), info_dict, name='bns'),
     #url(r'^work/bns/(?P<product_pk>\d+)/$', views.ProjectListView.as_view(template_name='project_detail.html'), name='project'),
     #url(r'^bns/$', views.ProjectListView.as_view(template_name='product.html'), name='product'),
-    url('pages/', include('django.contrib.flatpages.urls')),
+    #('pages/', include('django.contrib.flatpages.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
