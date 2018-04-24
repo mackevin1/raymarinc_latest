@@ -178,7 +178,7 @@ class Products(models.Model):
 
 
 class Category(models.Model):
-    tbipartnumber = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
+    name = models.ManyToManyField(Category, through='Products')
 
     def __str__(self):
         if self.tbipartnumber==None:
