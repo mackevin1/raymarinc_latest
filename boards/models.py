@@ -181,7 +181,7 @@ class Category(models.Model):
     name = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.category
 
 class SubCategory(models.Model):
     category = models.ManyToManyField(Category, through='Products')
