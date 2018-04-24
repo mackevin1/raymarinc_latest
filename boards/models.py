@@ -168,7 +168,7 @@ class Products(models.Model):
     tbipartnumber = models.TextField(max_length=100)
     category = models.CharField(max_length=100)
     subcategory = models.CharField(max_length=100)
-    description = models.TextField(max_length=1000)
+    proddescription = models.TextField(max_length=1000)
     value = models.CharField(max_length=100)
     tags = models.CharField(max_length=100)
     searchkeys = models.CharField(max_length=100)
