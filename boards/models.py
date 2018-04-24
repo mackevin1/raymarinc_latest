@@ -178,13 +178,12 @@ class Products(models.Model):
 
 
 class Category(models.Model):
-    name = models.ManyToManyField(Category, through='Products')
-    category = models.TextField(max_length=1000)
-
+    tbipartnumber = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
+    name = models.TextField(max_length=1000)
     def __str__(self):
-        if self.name==None:
+        if self.tbipartnumber==None:
             return "No category"
-        return self.name
+        return self.tbipartnumber
 
 class SubCategory(models.Model):
     category = models.ManyToManyField(Category, through='Products')
