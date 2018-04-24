@@ -3,7 +3,7 @@ import re
 from django import template
 from django.apps import apps
 
-apps.get_model('boards', 'homepage')
+apps.get_model('boards')
 
 register = template.Library()
 
