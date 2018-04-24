@@ -15,10 +15,6 @@ class BoardListView(ListView):
     context_object_name = 'boards'
     template_name = 'home.html'
 
-class ProductListView(ListView):
-    model = Products
-    context_object_name = 'products'
-    template_name = 'home.html'
 
 class CategoryListView(ListView):
     model = Category
