@@ -35,9 +35,9 @@
         <div class="container">
 
             <div class="intro">
-{% for products in board %}
-                <h1>{{ product.tbipartnumber }}</h1>
-                <p>{{ board.subhead }}</p>
+{% for products in boards %}
+                <h1>{{ products.tbipartnumber }}</h1>
+                <p>{{ products.description }}</p>
 {% endfor %}
 
                 <a href="#services" class="btn btn-default-o onPageNav">Our Services</a>
