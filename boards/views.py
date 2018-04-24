@@ -20,7 +20,7 @@ class ProductListView(ListView):
     model = Products
     context_object_name = 'products'
     template_name = 'home.html'
-    paginate_by = 20
+
 class CategoryListView(ListView):
     model = Category
     context_object_name = 'category'
@@ -32,7 +32,7 @@ class ProductImagesListView(ListView):
     context_object_name = 'productimages'
     template_name = 'home.html'
     paginate_by = 20
-    
+
 class HomepageListView(ListView):
     model = Homepage
     context_object_name = 'homepages'
