@@ -178,7 +178,7 @@ class Products(models.Model):
 
 
 class Category(models.Model):
-    name = models.ForeignKey(Products, related_name='category', on_delete=models.CASCADE)
+    name = models.ForeignKey(Products, related_name='categoryname', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
