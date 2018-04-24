@@ -166,11 +166,6 @@ class Category(models.Model):
             return "No category"
         return self.tbipartnumber
 
-class SubCategory(models.Model):
-    category = models.ManyToManyField(Category, through='Products')
-    category = models.ForeignKey(Category, related_name='+', on_delete=models.CASCADE)
-    subcategory = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
-
 
 class Products(models.Model):
     companyname = models.CharField(max_length=100)
@@ -189,3 +184,8 @@ class Products(models.Model):
         if self.tbipartnumber==None:
             return "No product"
         return self.tbipartnumber
+
+class SubCategory(models.Model):
+    category = models.ManyToManyField(Category, through='Products')
+    category = models.ForeignKey(Category, related_name='+', on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
