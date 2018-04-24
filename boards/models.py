@@ -43,7 +43,6 @@ class ProductImages(models.Model):
     name = models.CharField(max_length=100)
     images = models.FileField(null=True, blank=True)
     primary = models.FileField(null=True, blank=True)
-    category = models.ManyToManyField(Category, through='Board')
 
     def __str__(self):
         if self.name==None:

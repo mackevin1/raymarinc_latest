@@ -23,7 +23,7 @@ class ProductListView(ListView):
 
 class CategoryListView(ListView):
     model = Category
-    context_object_name = 'category'
+    context_object_name = 'categorys'
     template_name = 'home.html'
     paginate_by = 20
 
