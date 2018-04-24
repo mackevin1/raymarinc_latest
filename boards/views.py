@@ -149,6 +149,6 @@ class CategoryListView(ListView):
 
 class ProductImagesListView(ListView):
     model = ProductImages
-    context_object_name = 'images'
+    context_object_name = 'productimages'
     template_name = 'home.html'
     paginate_by = 20

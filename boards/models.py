@@ -147,6 +147,14 @@ class Post(models.Model):
 def get_message_as_markdown(self):
         return mark_safe(markdown(self.message, safe_mode='escape'))
 
+class ProductImages(models.Model):
+    name = models.CharField(max_length=100)
+    images = models.FileField(null=True, blank=True)
+    primary = models.FileField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
 class Products(models.Model):
     companyname = models.CharField(max_length=100)
     images = models.ForeignKey(images, related_name='+', on_delete=models.CASCADE)
@@ -163,13 +171,7 @@ class Products(models.Model):
     def __str__(self):
         return self.name
 
-class ProductImages(models.Model):
-    name = models.CharField(max_length=100)
-    images = models.FileField(null=True, blank=True)
-    primary = models.FileField(null=True, blank=True)
 
-    def __str__(self):
-        return self.name
 
 class Category(models.Model):
     name = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
