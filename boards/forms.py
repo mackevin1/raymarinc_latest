@@ -1,5 +1,4 @@
 from django import forms
-from .models import Topic
 
 class NewTopicForm(forms.ModelForm):
     message = forms.CharField(
