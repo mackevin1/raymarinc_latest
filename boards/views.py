@@ -52,7 +52,14 @@ class TopicListView(ListView):
         self.board = get_object_or_404(Board, pk=self.kwargs.get('pk'))
         queryset = self.board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
         return queryset
+    def get_context_data(self, **kwargs):
+        kwargs['products'] = self.products
+        return super().get_context_data(**kwargs)
 
+    def get_queryset(self):
+        self.board = get_object_or_404(Products, pk=self.kwargs.get('pk'))
+        queryset = self.products.order_by('-last_updated').annotate(replies=Count('posts') - 1)
+        return queryset
 
 class PostListView(ListView):
     model = Post
