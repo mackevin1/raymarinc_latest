@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'accounts',
     'boards',
     'bns',
+    'django.contrib.flatpages' ,
 ]
 
 MIDDLEWARE = [
