@@ -3,41 +3,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import Truncator
 
-class Products(models.Model):
-    companyname = models.CharField(max_length=100)
-    images = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
-    name = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
-    productid = models.CharField(max_length=100)
-    tbipartnumber = models.TextField(max_length=100)
-    category = models.CharField(max_length=100)
-    subcategory = models.CharField(max_length=100)
-    proddescription = models.TextField(max_length=1000)
-    value = models.CharField(max_length=100)
-    tags = models.CharField(max_length=100)
-    searchkeys = models.CharField(max_length=100)
-
-    def __str__(self):
-        if self.tbipartnumber==None:
-            return "No product"
-        return self.tbipartnumber
-
-class Category(models.Model):
-    tbipartnumber = models.TextField(max_length=1000)
-    name = models.TextField(max_length=1000)
-    def __str__(self):
-        if self.tbipartnumber==None:
-            return "No category"
-        return self.tbipartnumber
-
-class SubCategory(models.Model):
-    category = models.ManyToManyField(Category, through='Products')
-    category = models.ForeignKey(Category, related_name='+', on_delete=models.CASCADE)
-    subcategory = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
-
-
-
-
-
 
 class Homepage(models.Model):
     headline1 = models.CharField(max_length=250)
