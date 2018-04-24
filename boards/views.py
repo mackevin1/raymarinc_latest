@@ -16,6 +16,23 @@ class BoardListView(ListView):
     context_object_name = 'boards'
     template_name = 'home.html'
 
+class ProductListView(ListView):
+    model = Products
+    context_object_name = 'products'
+    template_name = 'home.html'
+    paginate_by = 20
+class CategoryListView(ListView):
+    model = Category
+    context_object_name = 'category'
+    template_name = 'home.html'
+    paginate_by = 20
+
+class ProductImagesListView(ListView):
+    model = ProductImages
+    context_object_name = 'productimages'
+    template_name = 'home.html'
+    paginate_by = 20
+    
 class HomepageListView(ListView):
     model = Homepage
     context_object_name = 'homepages'
@@ -134,21 +151,3 @@ def get_queryset(self):
     self.project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
     queryset = self.project.order_by('-last_updated')
     return queryset
-
-class ProductListView(ListView):
-    model = Products
-    context_object_name = 'products'
-    template_name = 'home.html'
-    paginate_by = 20
-
-class CategoryListView(ListView):
-    model = Category
-    context_object_name = 'category'
-    template_name = 'home.html'
-    paginate_by = 20
-
-class ProductImagesListView(ListView):
-    model = ProductImages
-    context_object_name = 'productimages'
-    template_name = 'home.html'
-    paginate_by = 20
