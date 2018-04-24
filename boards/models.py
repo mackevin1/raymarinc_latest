@@ -158,7 +158,7 @@ class ProductImages(models.Model):
 class Products(models.Model):
     companyname = models.CharField(max_length=100)
     images = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
-    name = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
+    name = models.ForeignKey(Categories, related_name='+', on_delete=models.CASCADE)
     productid = models.CharField(max_length=100)
     tbipartnumber = models.TextField(max_length=100)
     category = models.CharField(max_length=100)
