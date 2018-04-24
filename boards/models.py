@@ -38,7 +38,16 @@ class BNShome(models.Model):
 
     def __str__(self):
         return self.name
+class ProductImages(models.Model):
+    name = models.CharField(max_length=100)
+    images = models.FileField(null=True, blank=True)
+    primary = models.FileField(null=True, blank=True)
+    categoryimages = models.ManyToManyField(Category, through='Products')
 
+    def __str__(self):
+        if self.name==None:
+            return "No Product Image"
+        return self.name
 
 
 class Board(models.Model):
@@ -148,16 +157,7 @@ class Post(models.Model):
 def get_message_as_markdown(self):
         return mark_safe(markdown(self.message, safe_mode='escape'))
 
-class ProductImages(models.Model):
-    name = models.CharField(max_length=100)
-    images = models.FileField(null=True, blank=True)
-    primary = models.FileField(null=True, blank=True)
-    categoryimages = models.ManyToManyField(Category, through='Products')  
 
-    def __str__(self):
-        if self.name==None:
-            return "No Product Image"
-        return self.name
 
 class Category(models.Model):
     tbipartnumber = models.TextField(max_length=1000)
