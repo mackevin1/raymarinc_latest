@@ -52,7 +52,7 @@ class Board(models.Model):
     headlinerightabout = models.TextField(blank=True, max_length=1000)
     name = models.CharField(max_length=30, unique=True)
     description = models.CharField(max_length=100)
-    image1 = models.FileField(null=True, blank=True)
+    images = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
     image2 = models.FileField(null=True, blank=True)
     image3 = models.FileField(null=True, blank=True)
     image4 = models.FileField(null=True, blank=True)
@@ -152,6 +152,7 @@ class ProductImages(models.Model):
     name = models.CharField(max_length=100)
     images = models.FileField(null=True, blank=True)
     primary = models.FileField(null=True, blank=True)
+    categoryimages = models.ManyToManyField(Category, through='Products')  
 
     def __str__(self):
         if self.name==None:
