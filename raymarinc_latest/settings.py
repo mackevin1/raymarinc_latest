@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['dev.aglans.com']
 
-
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -132,7 +132,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-SITE_ID = 1
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
