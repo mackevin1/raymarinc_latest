@@ -149,7 +149,7 @@ def get_message_as_markdown(self):
 
 class Products(models.Model):
     companyname = models.CharField(max_length=100)
-    images = models.ForeignKey(ProductImages, related_name='+', on_delete=models.CASCADE)
+    images = models.ForeignKey(Productimages, related_name='+', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     productid = models.CharField(max_length=100)
     tbipartnumber = models.TextField(max_length=100)
