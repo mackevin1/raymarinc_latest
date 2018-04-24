@@ -6,6 +6,8 @@ from django.conf.urls import url, include
 from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.flatpages import views
+
 
 from bns import views as bns_views
 from accounts import views as accounts_views
