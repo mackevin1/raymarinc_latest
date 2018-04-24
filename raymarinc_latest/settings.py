@@ -35,19 +35,17 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',  # <- here
     'django.contrib.sitemaps',
+    'django.contrib.flatpages',
     'widget_tweaks',
     'taggit',
     'accounts',
     'boards',
     'bns',
-    'feincms',
-    'mptt',
-    'feincms.module.page',
-    'feincms.module.medialibrary',
 ]
 
 MIDDLEWARE = [
