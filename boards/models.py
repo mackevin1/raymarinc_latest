@@ -154,8 +154,8 @@ class ProductImages(models.Model):
 
     def __str__(self):
         if self.ProductImages==None:
-        return "No Product Image"
-    return self.name
+            return "No Product Image"
+        return self.name
 
 
 
