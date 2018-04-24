@@ -179,4 +179,5 @@ class Category(models.Model):
 
 class SubCategory(models.Model):
     category = models.ManyToManyField(Category, through='Products')
+    category = models.ForeignKey(Category, related_name='+', on_delete=models.CASCADE)
     subcategory = models.ForeignKey(Products, related_name='+', on_delete=models.CASCADE)
